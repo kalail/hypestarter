@@ -93,6 +93,7 @@ INSTALLED_APPS = (
 	# 'crispy_forms',
 
 	# Project
+	'landing',
 )
 
 # Set up Sessions

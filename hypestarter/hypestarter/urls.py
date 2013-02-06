@@ -4,10 +4,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', 'hypestarter.views.index'),
-    # url(r'^hypestarter/', include('hypestarter.foo.urls')),
     # Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    # Landing
+    url(r'^$', include('landing.urls')),
 )

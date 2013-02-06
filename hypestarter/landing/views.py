@@ -9,4 +9,4 @@ def index(request):
 
 	"""
 	# Collect data for index page
-	return render_to_response('base.html', context_instance=RequestContext(request))
+	return render_to_response('landing/index.html', context_instance=RequestContext(request))
