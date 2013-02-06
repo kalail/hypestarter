@@ -85,7 +85,7 @@ INSTALLED_APPS = (
 	# Third party
 	'south',
 	'djcelery',
-	# 'storages',
+	'storages',
 	'gunicorn',
 	'django_extensions',
 	'debug_toolbar',
