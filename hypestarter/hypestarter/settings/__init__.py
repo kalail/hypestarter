@@ -84,9 +84,9 @@ INSTALLED_APPS = (
 	
 	# Third party
 	'south',
-	# 'djcelery',
+	'djcelery',
 	# 'storages',
-	# 'gunicorn',
+	'gunicorn',
 	'django_extensions',
 	'debug_toolbar',
 	'cache_panel',
@@ -100,7 +100,7 @@ INSTALLED_APPS = (
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Celery settings
-# import djcelery
-# djcelery.setup_loader()
+import djcelery
+djcelery.setup_loader()
 
 LOGIN_URL = '/login'
