@@ -5,7 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'hypestarter.views.home', name='home'),
+    url(r'^$', 'hypestarter.views.index'),
     # url(r'^hypestarter/', include('hypestarter.foo.urls')),
     # Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
