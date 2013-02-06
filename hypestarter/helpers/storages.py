@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 from storages.backends.s3boto import S3BotoStorage
 
 StaticS3Storage = lambda: S3BotoStorage(location='static')
