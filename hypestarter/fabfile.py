@@ -4,6 +4,9 @@ from fabric.api import *
 def deploy():
 	# Push to heroku
 	local('git push heroku')
+	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
+	local('heroku run python hypestarter/manage.py syncdb --app hypestarter-dev')
+	local('heroku run python hypestarter/manage.py migrate --app hypestarter-dev')
 
 def compile_coffee():
 	"""

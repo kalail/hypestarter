@@ -11,9 +11,11 @@ celery==3.0.13
 dj-database-url==0.2.1
 django-cache-panel==0.1
 django-celery==3.0.11
+django-crispy-forms==1.2.3
 django-debug-toolbar==0.9.4
 django-extensions==1.0.3
 django-pylibmc-sasl==0.2.4
+django-social-auth==0.7.19
 django-storages==1.1.6
 gunicorn==0.17.2
 httplib2==0.7.7
@@ -24,7 +26,9 @@ psycopg2==2.4.6
 pycrypto==2.6
 pylibmc==1.2.3
 python-dateutil==1.5
+python-openid==2.2.5
 python-twitter==0.8.2
 pytz==2012j
+raven==3.1.10
 simplejson==3.0.7
 wsgiref==0.1.2
