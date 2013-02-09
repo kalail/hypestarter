@@ -1,14 +1,14 @@
+{% load url from future %}
+
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="#">Hypestarter</a>
+			<a class="brand" href="{% url 'landing.views.index' %}">Hypestarter</a>
 			<ul class="nav">
 				<li {% if active == 'about' %} class="active" {% endif %}><a href="#">About</a></li>
 				<li {% if active == 'contact' %} class="active" {% endif %}><a href="#">Contact</a></li>
 			</ul>
-			<ul class="nav pull-right">
-				<li {% if active == 'login' %} class="active" {% endif %}><a href="#">Log In</a></li>
-			</ul>
+			<a id="login" class="nav pull-right" href="{% url 'socialauth_begin' 'twitter' %}"><button class="btn btn-primary">Log In&nbsp&nbsp<i class="icon-twitter-sign icon-large"></i></button></a>
 		</div>
 	</div>
 </div>

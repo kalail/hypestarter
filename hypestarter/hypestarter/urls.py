@@ -9,4 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     # Landing
     url(r'^$', include('landing.urls')),
+    # Social Auth
+    url(r'', include('social_auth.urls')),
 )

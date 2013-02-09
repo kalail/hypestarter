@@ -59,6 +59,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 	'debug_toolbar.middleware.DebugToolbarMiddleware',
+	'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
 )
 
 ROOT_URLCONF = 'hypestarter.urls'
@@ -90,7 +91,9 @@ INSTALLED_APPS = (
 	'django_extensions',
 	'debug_toolbar',
 	'cache_panel',
-	# 'crispy_forms',
+	'social_auth',
+	'crispy_forms',
+	'raven.contrib.django.raven_compat',
 
 	# Project
 	'landing',
@@ -103,4 +106,55 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 import djcelery
 djcelery.setup_loader()
 
-LOGIN_URL = '/login'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL = '/login-error/'
+
+AUTHENTICATION_BACKENDS = (
+	'social_auth.backends.twitter.TwitterBackend',
+	'django.contrib.auth.backends.ModelBackend',
+)
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'WARNING',
+        'handlers': ['sentry'],
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+    },
+}

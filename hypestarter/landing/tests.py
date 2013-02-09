@@ -1,16 +1,21 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
 
+class LandingIndexTestCase(TestCase):
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+	def test_index(self):
+		resp = self.client.get('/')
+		self.assertEqual(resp.status_code, 200)
+
+	def test_index_templates(self):
+		resp = self.client.get('/')
+		templates = [template.name for template in resp.templates]
+		self.assertTrue('landing/index.html' in templates)
+		self.assertTrue('base.html' in templates)
+		self.assertTrue('_nav.html' in templates)
+
+	def test_index_templates(self):
+		resp = self.client.get('/')
+		templates = [template.name for template in resp.templates]
+		self.assertTrue('landing/index.html' in templates)
+		self.assertTrue('base.html' in templates)
+		self.assertTrue('_nav.html' in templates)
