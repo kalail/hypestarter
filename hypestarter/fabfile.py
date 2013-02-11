@@ -1,10 +1,17 @@
 from fabric.api import *
-
+import hypestarter.settings as settings
 
 def deploy():
 	# Push to heroku
 	local('git push heroku')
 	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
+
+	config_vars = settings.CONFIG_VARS['DEVELOPMENT']
+	for name, var in config_vars.items():
+		config_commands.append('%s="%s" ' % (name, var))
+
+	local('heroku config:add %s --app hypestarter-dev' % config_commands)
+
 	local('heroku run python hypestarter/manage.py syncdb --app hypestarter-dev')
 	local('heroku run python hypestarter/manage.py migrate --app hypestarter-dev')
 
