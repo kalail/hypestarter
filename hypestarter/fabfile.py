@@ -7,11 +7,10 @@ def deploy():
 	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
 
 	config_vars = settings.CONFIG_VARS['DEVELOPMENT']
-	for name, var in config_vars.items():
-		config_commands.append('%s="%s" ' % (name, var))
+	config_commands = ['%s="%s"' % (name, var) for name, var in config_vars.items()]
+	config_command = ' '.join(config_commands)
 
-	local('heroku config:add %s --app hypestarter-dev' % config_commands)
-
+	local('heroku config:add %s --app hypestarter-dev' % config_command)
 	local('heroku run python hypestarter/manage.py syncdb --app hypestarter-dev')
 	local('heroku run python hypestarter/manage.py migrate --app hypestarter-dev')
 
