@@ -107,7 +107,7 @@ import djcelery
 djcelery.setup_loader()
 
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/login/twitter/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL = '/login-error/'
 
