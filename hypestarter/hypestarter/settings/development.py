@@ -39,30 +39,7 @@ CACHES = {
 	}
 }
 
-# Set up simple master logger
-LOGGING = {
-	'version': 1,
-	'disable_existing_loggers': True,
-	'formatters': {
-		'verbose': {
-			'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-		},
-		'simple': {
-			'format': '%(levelname)s %(message)s'
-		},
-	},
-	'handlers': {
-		'console':{
-			'level': 'INFO',
-			'class': 'logging.StreamHandler',
-			'formatter': 'simple'
-		},
-	},
-	'loggers': {
-		'': {
-			'handlers': ['console'],
-			'level': 'INFO',
-			'propagate': True,
-		},
-	}
-}
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY')
+TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
