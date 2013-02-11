@@ -118,43 +118,53 @@ AUTHENTICATION_BACKENDS = (
 
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'root': {
-        'level': 'WARNING',
-        'handlers': ['sentry'],
-    },
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-    },
-    'handlers': {
-        'sentry': {
-            'level': 'ERROR',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'ERROR',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'raven': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'sentry.errors': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-    },
+	'version': 1,
+	'disable_existing_loggers': True,
+	'root': {
+		'level': 'WARNING',
+		'handlers': ['sentry'],
+	},
+	'formatters': {
+		'verbose': {
+			'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+		},
+	},
+	'handlers': {
+		'sentry': {
+			'level': 'ERROR',
+			'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+		},
+		'console': {
+			'level': 'DEBUG',
+			'class': 'logging.StreamHandler',
+			'formatter': 'verbose'
+		}
+	},
+	'loggers': {
+		'django.db.backends': {
+			'level': 'ERROR',
+			'handlers': ['console'],
+			'propagate': False,
+		},
+		'raven': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+			'propagate': False,
+		},
+		'sentry.errors': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+			'propagate': False,
+		},
+	},
 }
+
+SOCIAL_AUTH_PIPELINE = (
+	'social_auth.backends.pipeline.social.social_auth_user',
+	'social_auth.backends.pipeline.associate.associate_by_email',
+	'social_auth.backends.pipeline.user.get_username',
+	'social_auth.backends.pipeline.user.create_user',
+	'social_auth.backends.pipeline.social.associate_user',
+	'social_auth.backends.pipeline.social.load_extra_data',
+	'social_auth.backends.pipeline.user.update_user_details'
+)
