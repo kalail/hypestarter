@@ -9,11 +9,11 @@
 				<li {% if active == 'contact' %} class="active" {% endif %}><a href="#">Contact</a></li>
 			</ul>
 			{% if user.is_authenticated %}
-				<a id="login" class="nav pull-right" href="{% url 'socialauth_begin' 'twitter' %}"><button class="btn btn-primary">Log In&nbsp&nbsp<i class="icon-twitter-sign icon-large"></i></button></a>
-			{% else %}
 				<div class="nav pull-right">
 					Welcome {{ user.username }}
 				</div>
+			{% else %}
+				<a id="login" class="nav pull-right" href="{% url 'socialauth_begin' 'twitter' %}"><button class="btn btn-primary">Log In&nbsp&nbsp<i class="icon-twitter-sign icon-large"></i></button></a>
 			{% endif %}
 		</div>
 	</div>
