@@ -9,10 +9,10 @@ def deploy():
 	config_commands = ['%s="%s"' % (name, var) for name, var in config_vars.items()]
 	config_command = ' '.join(config_commands)
 
-	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
+	local('heroku config:add %s --app hypestarter-dev' % config_command)
 	local('heroku run python hypestarter/manage.py syncdb --app hypestarter-dev')
 	local('heroku run python hypestarter/manage.py migrate --app hypestarter-dev')
-	local('heroku config:add %s --app hypestarter-dev' % config_command)
+	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
 
 def compile_coffee():
 	"""
