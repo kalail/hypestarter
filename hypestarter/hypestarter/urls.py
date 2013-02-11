@@ -4,11 +4,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    # Social Auth
+    url(r'', include('social_auth.urls')),
     # Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # Landing
     url(r'^$', include('landing.urls')),
-    # Social Auth
-    url(r'', include('social_auth.urls')),
 )

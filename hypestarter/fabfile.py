@@ -4,15 +4,15 @@ import hypestarter.settings as settings
 def deploy():
 	# Push to heroku
 	local('git push heroku')
-	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
 
 	config_vars = settings.CONFIG_VARS['DEVELOPMENT']
 	config_commands = ['%s="%s"' % (name, var) for name, var in config_vars.items()]
 	config_command = ' '.join(config_commands)
 
-	local('heroku config:add %s --app hypestarter-dev' % config_command)
+	local('heroku run python hypestarter/manage.py collectstatic --app hypestarter-dev')
 	local('heroku run python hypestarter/manage.py syncdb --app hypestarter-dev')
 	local('heroku run python hypestarter/manage.py migrate --app hypestarter-dev')
+	local('heroku config:add %s --app hypestarter-dev' % config_command)
 
 def compile_coffee():
 	"""
