@@ -12,10 +12,4 @@ class LandingIndexTestCase(TestCase):
 		self.assertTrue('landing/index.html' in templates)
 		self.assertTrue('base.html' in templates)
 		self.assertTrue('_nav.html' in templates)
-
-	def test_index_templates(self):
-		resp = self.client.get('/')
-		templates = [template.name for template in resp.templates]
-		self.assertTrue('landing/index.html' in templates)
-		self.assertTrue('base.html' in templates)
-		self.assertTrue('_nav.html' in templates)
+		
