@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-
+from .models import Featured
 
 def index(request):
 	"""Index Page
@@ -9,7 +9,17 @@ def index(request):
 
 	"""
 	# Collect data for index page
-	return render_to_response('landing/index.html', context_instance=RequestContext(request))
+	try:
+		featured = Featured.objects.latest()
+	except Featured.DoesNotExist:
+		featured = None
+	return render_to_response(
+		'landing/index.html',
+		{
+			'featured': featured,
+		},
+		context_instance=RequestContext(request)
+	)
 
 def about(request):
 	"""About Page
