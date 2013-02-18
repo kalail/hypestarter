@@ -7,9 +7,8 @@ cmd = settings.FAB_DEPLOY_ENVS
 
 
 def push(environment=None):
-	"""
-	Push the app to heroku.
-	"""
+	"""Push the app to heroku."""
+
 	if not environment:
 		print "No environment declared!"
 		return
@@ -26,10 +25,8 @@ def push(environment=None):
 
 
 def add_config_vars(environment=None):
-	"""
-	Add given config variables as environment variables.
-	
-	"""
+	"""Add given config variables as environment variables."""
+
 	if not environment:
 		print "No environment declared!"
 		return
@@ -49,10 +46,8 @@ def add_config_vars(environment=None):
 	local('heroku config:add %s --app %s' % (config_command, cmd_env))
 
 def syncdb(environment=None):
-	"""
-	Run syncdb on the server.
-	
-	"""
+	"""Run syncdb on the server."""
+
 	if not environment:
 		print "No environment declared!"
 		return
@@ -68,10 +63,7 @@ def syncdb(environment=None):
 	local('heroku run python hypestarter/manage.py syncdb --app %s' % cmd_env)
 
 def migrate(environment=None):
-	"""
-	Migrate the database on the server.
-	
-	"""
+	"""Migrate the database on the server."""
 	if not environment:
 		print "No environment declared!"
 		return
@@ -87,6 +79,7 @@ def migrate(environment=None):
 	local('heroku run python hypestarter/manage.py migrate --app %s' % cmd_env)
 
 def collectstatic(environment=None):
+	"""Push all static assets to S3."""
 	if not environment:
 		print "No environment declared!"
 		return
@@ -103,9 +96,8 @@ def collectstatic(environment=None):
 
 
 def deploy(environment=None):
-	"""
-	Fully deploy the app to heroku, running all the steps.
-	"""
+	"""Fully deploy the app to heroku, running all the steps."""
+
 	if not environment:
 		print "No environment declared!"
 		return
@@ -126,9 +118,8 @@ def deploy(environment=None):
 
 
 def compile_coffee():
-	"""
-	Compiles coffeescript files to javascript
-	"""
+	"""Compile coffeescript files to javascript"""
+
 	# Get files with .coffee extension
 	files = local("find static/js -name *.coffee", capture=True).split("\n")
 	for f in files:
@@ -136,9 +127,8 @@ def compile_coffee():
 		local('coffee -c %s' % f)
 
 def watch_coffee():
-	"""
-	Watches and automatically compiles coffeescript files to javascript
-	"""
+	"""Watch and automatically compile coffeescript files to javascript""" 
+
 	# Get files with .coffee extension
 	coffee_folder = 'static/coffee'
 	js_folder = 'static/js'
@@ -146,9 +136,8 @@ def watch_coffee():
 	local('coffee -o %s -wc %s' % (js_folder, coffee_folder))
 
 def watch_less():
-	"""
-	Watches and automatically compiles coffeescript files to javascript
-	"""
+	"""Watch and automatically compile coffeescript files to javascript"""
+
 	# Get files with .less extension
 	less_folder = 'static/css'
 	print('watching %s for changes' % less_folder)
