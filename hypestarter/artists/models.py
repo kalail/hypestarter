@@ -8,6 +8,9 @@ class Genre(models.Model):
 	"""
 	name = models.CharField(max_length=64)
 
+	def __unicode__(self):
+		return self.name
+
 class Artist(models.Model):
 	"""Artist
 
@@ -19,3 +22,6 @@ class Artist(models.Model):
 	bio = models.TextField(blank=True)
 	genre = models.ForeignKey(Genre)
 	image = models.ImageField(blank=True, upload_to='artist_images')
+
+	def __unicode__(self):
+		return self.name

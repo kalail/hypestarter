@@ -14,3 +14,6 @@ class Featured(models.Model):
 
 	class Meta:
 		get_latest_by = 'date'
+
+	def __unicode__(self):
+		return 'Featured on %s' % self.date
