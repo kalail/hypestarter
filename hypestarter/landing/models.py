@@ -3,11 +3,14 @@ from artists.models import Artist
 from django.utils import timezone
 
 
-class FeaturedArtists(models.Model):
-	"""Featured Artist
+class Featured(models.Model):
+	"""Featured
 
-	Artists tht are displayed on the homepage.
+	A collection of Artists that are displayed on the homepage.
 
 	"""
 	artists = models.ManyToManyField(Artist)
 	date = models.DateField(default=timezone.now)
+
+	class Meta:
+		get_latest_by = 'date'
