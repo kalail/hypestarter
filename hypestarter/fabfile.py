@@ -3,15 +3,7 @@ from fabric.api import *
 # Import settings
 import hypestarter.settings as settings
 
-cmd = {
-	'development': (
-		'd',
-		'dev',
-		'development'
-	),
-
-	'production': ()
-}
+cmd = settings.FAB_DEPLOY_ENVS
 
 
 def push(environment=None):
