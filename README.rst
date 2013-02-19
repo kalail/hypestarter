@@ -5,22 +5,16 @@ Hypestarter
 *Organic* hype generation service for music artists.
 
 
-*******
-Organic
-*******
+**Organic**
 
-Driven by fans, *not* record labels.
+	Driven by fans, **not** record labels.
 
 
-***********
-Open Source
-***********
+**Open Source**
 
-Secure code maintained by the *world*.
+	Secure code maintained by the **world**.
 
 
-********
-Discover
-********
+**Discover**
 
-Find *new* and *upcoming* artists.
+	Find *new* and **upcoming** artists.
