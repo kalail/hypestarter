@@ -11,9 +11,10 @@ body {
 }
 .page-header {
   /*Main header*/
-	background: -moz-linear-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
-	background: -webkit-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
-	background: linear-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
+
+  background: -moz-linear-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
+  background: -webkit-linear-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
+  background: linear-gradient(45deg, #fcffce 0%, #92ccac 100%) repeat scroll 0% 0% transparent;
   /*Alternative header*/
 
   /*background: linear-gradient(45deg, rgb(206, 252, 255) 0%, rgb(204, 172, 146) 100%);*/
