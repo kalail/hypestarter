@@ -6,23 +6,6 @@ import hypestarter.settings as settings
 cmd_envs = settings.FAB_DEPLOY_ENVS
 
 
-def set_requirements(environment=None):
-	"""Install pip requirements."""
-
-	if not environment:
-		print "No environment declared!"
-		return
-
-	if environment in cmd_envs['development']:
-		env_req = 'development'
-	elif environment in cmd_envs['production']:
-		env_req = 'production'
-	else:
-		print "Incorrect environment declared!"
-		return
-
-	local('echo "-r requirements/%s.txt" > ../requirements.txt' % env_req)
-
 def push(environment=None):
 	"""Push the app to heroku."""
 
@@ -127,7 +110,6 @@ def deploy(environment=None):
 		print "Incorrect environment declared!"
 		return
 
-	set_requirements(env_name)
 	push(env_name)
 	add_config_vars(env_name)
 	syncdb(env_name)
