@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -13,8 +15,9 @@ def index(request):
 	Index page.
 
 	"""
-	# Collect data for index page
-	artists = Artist.objects.all()
+	# Get list of all artists and shuffle it.
+	artists = list(Artist.objects.all())
+	random.shuffle(artists)
 	return render_to_response('index.html',
 		{
 			'artists': artists,
