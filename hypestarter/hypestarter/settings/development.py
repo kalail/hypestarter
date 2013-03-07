@@ -39,7 +39,46 @@ CACHES = {
 	}
 }
 
+INSTALLED_APPS = (
+	# Contrib
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.sites',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
+	'django.contrib.admin',
+	'django.contrib.admindocs',
+	
+	# Third party
+	'south',
+	'djcelery',
+	'storages',
+	'gunicorn',
+	'django_extensions',
+	'debug_toolbar',
+	'cache_panel',
+	'social_auth',
+	'crispy_forms',
+	'raven.contrib.django.raven_compat',
+
+	# Project
+	'landing',
+	'artists',
+)
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY')
 TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
+
+MIDDLEWARE_CLASSES = (
+	'django.middleware.common.CommonMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.csrf.CsrfViewMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'debug_toolbar.middleware.DebugToolbarMiddleware',
+	'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
+)

@@ -1,5 +1,10 @@
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import RequestContext
+from django.contrib import auth, messages
+
+
 from .models import Featured
 
 def index(request):
@@ -28,13 +33,14 @@ def about(request):
 
 	"""
 	# Collect data for index page
-	return render_to_response('landing/index.html', context_instance=RequestContext(request))
+	return HttpResponseRedirect(reverse('landing'))
 
-def code(request):
-	"""Index Page
+def logout(request):
+	"""Logout View
 
-	Landing page for the website.
+	Log out the current user.
 
 	"""
-	# Collect data for index page
-	return render_to_response('landing/index.html', context_instance=RequestContext(request))
+	auth.logout(request)
+	messages.success(request, 'Logged out')
+	return HttpResponseRedirect(reverse('landing'))
