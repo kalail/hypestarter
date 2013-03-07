@@ -22,11 +22,9 @@
 <section class="container">
     <div class="row">
 		<div id="container">
-			<div class="explore_artist"><img src="{{ STATIC_URL }}images/artists/the_black_keys.jpg"></div>
-			<div class="explore_artist"><img src="{{ STATIC_URL }}images/artists/carly_rae_jepsen.jpg"></div>
-			<div class="explore_artist"><img src="{{ STATIC_URL }}images/artists/macklemore.jpg"></div>
-			<div class="explore_artist"><img src="{{ STATIC_URL }}images/artists/nine_inch_nails.jpg"></div>
-			<div class="explore_artist"><img src="{{ STATIC_URL }}images/artists/queens_of_the_stone_age.jpg"></div>
+			{% for artist in artists %}
+				<div class="explore_artist"><img src="{{ artist.image.url }}"></div>
+			{% endfor %}
 		</div>
 	</div>
 </section>

@@ -84,6 +84,17 @@ SOCIAL_AUTH_PIPELINE = (
 	'social_auth.backends.pipeline.user.update_user_details'
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+	"django.contrib.auth.context_processors.auth",
+	"django.core.context_processors.debug",
+	"django.core.context_processors.i18n",
+	"django.core.context_processors.media",
+	"django.core.context_processors.static",
+	"django.core.context_processors.tz",
+	"django.contrib.messages.context_processors.messages",
+	'django.core.context_processors.request',
+)
+
 # Import corresponding environment settings.
 try:
 	app_env = os.environ["HYPESTARTER_ENV"]

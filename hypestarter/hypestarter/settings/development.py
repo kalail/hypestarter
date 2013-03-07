@@ -41,6 +41,7 @@ CACHES = {
 
 INSTALLED_APPS = (
 	# Contrib
+	'suit',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',

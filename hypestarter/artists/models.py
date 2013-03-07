@@ -17,11 +17,11 @@ class Artist(models.Model):
 	A band or individual who makes music.
 
 	"""
-	name = models.CharField(max_length=128)
+	name = models.CharField(max_length=256)
 	description = models.TextField(blank=True)
 	bio = models.TextField(blank=True)
 	genre = models.ForeignKey(Genre)
-	image = models.ImageField(blank=True, upload_to='artist_images')
+	image = models.ImageField(upload_to='artist_images')
 
 	def __unicode__(self):
 		return self.name
