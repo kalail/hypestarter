@@ -3,7 +3,7 @@ from fabric.api import *
 # Import settings
 import hypestarter.settings as settings
 
-cmd = settings.FAB_DEPLOY_ENVS
+cmd_envs = settings.FAB_DEPLOY_ENVS
 
 
 def push(environment=None):
@@ -13,9 +13,9 @@ def push(environment=None):
 		print "No environment declared!"
 		return
 	# Push to heroku
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		cmd_env = 'heroku'
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		cmd_env = 'heroku-production'
 	else:
 		print "Incorrect environment declared!"
@@ -31,10 +31,10 @@ def add_config_vars(environment=None):
 		print "No environment declared!"
 		return
 
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		cmd_env = 'hypestarter-dev'
 		config_vars = settings.CONFIG_VARS['DEVELOPMENT']
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		cmd_env = 'hypestarter'
 		config_vars = settings.CONFIG_VARS['PRODUCTION']
 	else:
@@ -52,9 +52,9 @@ def syncdb(environment=None):
 		print "No environment declared!"
 		return
 
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		cmd_env = 'hypestarter-dev'
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		cmd_env = 'hypestarter'
 	else:
 		print "Incorrect environment declared!"
@@ -68,9 +68,9 @@ def migrate(environment=None):
 		print "No environment declared!"
 		return
 
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		cmd_env = 'hypestarter-dev'
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		cmd_env = 'hypestarter'
 	else:
 		print "Incorrect environment declared!"
@@ -84,9 +84,9 @@ def collectstatic(environment=None):
 		print "No environment declared!"
 		return
 
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		cmd_env = 'hypestarter-dev'
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		cmd_env = 'hypestarter'
 	else:
 		print "Incorrect environment declared!"
@@ -102,9 +102,9 @@ def deploy(environment=None):
 		print "No environment declared!"
 		return
 
-	if environment in cmd['development']:
+	if environment in cmd_envs['development']:
 		env_name = 'development'
-	elif environment in cmd['production']:
+	elif environment in cmd_envs['production']:
 		env_name = 'production'
 	else:
 		print "Incorrect environment declared!"
