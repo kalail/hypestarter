@@ -23,7 +23,6 @@ def push(environment=None):
 
 	local('git push %s' % cmd_env)
 
-
 def add_config_vars(environment=None):
 	"""Add given config variables as environment variables."""
 
@@ -44,6 +43,25 @@ def add_config_vars(environment=None):
 	config_commands = ['%s="%s"' % (name, var) for name, var in config_vars.items()]
 	config_command = ' '.join(config_commands)
 	local('heroku config:add %s --app %s' % (config_command, cmd_env))
+
+def install_requirements(environment=None):
+	"""Install pip requirements."""
+
+	if not environment:
+		print "No environment declared!"
+		return
+
+	if environment in cmd_envs['development']:
+		cmd_env = 'hypestarter-dev'
+		env_req = 'development'
+	elif environment in cmd_envs['production']:
+		cmd_env = 'hypestarter'
+		env_req = 'production'
+	else:
+		print "Incorrect environment declared!"
+		return
+
+	local('heroku run pip install -r requirements/%s.txt --use-mirrors --app %s' % (env_req, cmd_env))
 
 def syncdb(environment=None):
 	"""Run syncdb on the server."""
@@ -112,6 +130,7 @@ def deploy(environment=None):
 
 	push(env_name)
 	add_config_vars(env_name)
+	install_requirements(env_name)
 	syncdb(env_name)
 	migrate(env_name)
 	collectstatic(env_name)

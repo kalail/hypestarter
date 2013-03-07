@@ -1,3 +1,7 @@
+psycopg2
+pylibmc==1.2.3
+django-pylibmc-sasl==0.2.4
+
 Django==1.4.3
 Fabric==1.5.3
 PIL==1.1.7
@@ -10,10 +14,8 @@ billiard==2.7.3.19
 boto==2.8.0
 celery==3.0.13
 dj-database-url==0.2.1
-django-cache-panel==0.1
 django-celery==3.0.11
 django-crispy-forms==1.2.3
-django-debug-toolbar==0.9.4
 django-extensions==1.0.3
 django-social-auth==0.7.19
 django-storages==1.1.6
