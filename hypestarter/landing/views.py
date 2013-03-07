@@ -7,8 +7,8 @@ from django.contrib import auth, messages
 
 from .models import Featured
 
-def index(request):
-	"""Index Page
+def landing(request):
+	"""Landing
 
 	Landing page for the website.
 
@@ -19,7 +19,7 @@ def index(request):
 	except Featured.DoesNotExist:
 		featured = None
 	return render_to_response(
-		'landing/index.html',
+		'landing/landing.html',
 		{
 			'featured': featured,
 		},
@@ -32,8 +32,10 @@ def about(request):
 	Displays information about the project and the team behind it.
 
 	"""
-	# Collect data for index page
-	return HttpResponseRedirect(reverse('landing'))
+	return render_to_response(
+		'landing/about.html',
+		context_instance=RequestContext(request)
+	)
 
 def logout(request):
 	"""Logout View
@@ -42,5 +44,5 @@ def logout(request):
 
 	"""
 	auth.logout(request)
-	messages.success(request, 'Logged out')
+	messages.success(request, 'Logged out!')
 	return HttpResponseRedirect(reverse('landing'))
