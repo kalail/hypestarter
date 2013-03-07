@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+
+{% block navbar %}
+{% include "_navbar.html" with active='explore' %}
+{% endblock navbar %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/explore.css" type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<section class="container">
+    <div class="row">
+		<div id="container">
+			{% for artist in artists %}
+				<div class="explore_artist"><img src="{{ artist.image.url }}"></div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock content %}
+
+
+{% block js %}
+	<script src="{{ STATIC_URL }}js/jquery.masonry.js"></script>
+	<script src="{{ STATIC_URL }}js/explore.js"></script>
+{% endblock js %}

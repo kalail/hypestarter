@@ -1,33 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Hypestarter{% block title %}{% endblock title %}</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hypestarter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/strip.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/strip-responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/custom_styles.css" type="text/css">
+    {% block css %}
+    {% endblock css %}
 
-		<!-- CSS -->
-		<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/custom_bootstrap.css">
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.min.css">
-		{% block css %}
-		{% endblock css %}
+   	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    {% block font %}
+    {% endblock font %}
+    
+</head>
 
-	</head>
+<body>
 
-	<body>
-		{% block nav %}
-		{% include '_nav.html' %}
-		{% endblock nav %}
+{% block navbar %}
+{% include "_navbar.html" %}
+{% endblock navbar %}
 
-		{% block content %}
-		{% endblock content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} container highlight">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 
-		<!-- JS -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
-		<script src="{{STATIC_URL}}js/login.js"></script>
+{% block content %}    
+{% endblock content %}
 
-		{% block js %}
-		{% endblock js %}
+<footer class="container footer-box">   
+    <hr class="shadow-line" />         
+    <nav class="links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Support</a>
+        <a href="#">Developers</a>
+        <a href="#">Feedback</a>
+    </nav>  
+    <nav class="links">   
+        <a href="#"><img src="{{ STATIC_URL }}images/twitter-icon.png" alt="twitter"></a>
+        <a href="#"><img src="{{ STATIC_URL }}images/facebook-icon.png" alt="fb"></a>   
+        <a href="#"><img src="{{ STATIC_URL }}images/googleplus-icon.png" alt="gplus"></a>      
+    </nav>                 
+    <p>&copy; <strong>Hypestarter</strong> 2013</p>           
+</footer>
 
-	</body>
+<script src="{{ STATIC_URL }}js/jquery.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+{% block js %}
+{% endblock js %}
+
+</body>
 </html>

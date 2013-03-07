@@ -1,0 +1,24 @@
+{% load url from future %}
+
+
+<section class="container">
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="/" class="brand">Hypestarter</a>
+                <ul class="nav">
+                    <li {% if active == 'home' %} class="active" {% endif %}><a href="#">Home </a></li>
+                    <li {% if active == 'explore' %} class="active" {% endif %}><a href="#">Explore</a></li>
+                    <li {% if active == 'about' %} class="active" {% endif %}><a href="#">About</a></li>
+
+                    {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Sign out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'socialauth_begin' 'twitter' %}">Sign in</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>

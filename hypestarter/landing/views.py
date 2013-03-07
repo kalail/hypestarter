@@ -1,9 +1,14 @@
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import RequestContext
+from django.contrib import auth, messages
+
+
 from .models import Featured
 
-def index(request):
-	"""Index Page
+def landing(request):
+	"""Landing
 
 	Landing page for the website.
 
@@ -14,7 +19,7 @@ def index(request):
 	except Featured.DoesNotExist:
 		featured = None
 	return render_to_response(
-		'landing/index.html',
+		'landing/landing.html',
 		{
 			'featured': featured,
 		},
@@ -27,14 +32,17 @@ def about(request):
 	Displays information about the project and the team behind it.
 
 	"""
-	# Collect data for index page
-	return render_to_response('landing/index.html', context_instance=RequestContext(request))
+	return render_to_response(
+		'landing/about.html',
+		context_instance=RequestContext(request)
+	)
 
-def code(request):
-	"""Index Page
+def logout(request):
+	"""Logout View
 
-	Landing page for the website.
+	Log out the current user.
 
 	"""
-	# Collect data for index page
-	return render_to_response('landing/index.html', context_instance=RequestContext(request))
+	auth.logout(request)
+	messages.success(request, 'Logged out!')
+	return HttpResponseRedirect(reverse('landing'))
