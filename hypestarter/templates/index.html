@@ -22,11 +22,10 @@
 		<div id="container">
 			{% for artist in artists %}
 				<div class="explore_artist">
-					<b src="{{ artist.name }}"/>
-					<img src="{{ artist.image.url }}">
-					<span class="tile-date redtxt"><span class="artist"> {{ artist.name }} </span>
-        			
-
+					<strong>
+						<img src="{{ artist.image.url }}">
+						<span class="tile-date redtxt">{{ artist.name }} </span>
+					</strong>
 				</div>
 			{% endfor %}
 		</div>
