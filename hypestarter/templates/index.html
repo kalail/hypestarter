@@ -21,13 +21,14 @@
     <div class="row">
 		<div id="container">
 			{% for artist in artists %}
-				<div class="explore_artist">
-					<strong>
-						<a aref="{% url artists.views.show artist.id %}"/>
+				<a href="{% url 'artists.views.show' artist.id %}">
+					<div class="explore_artist">
 						<img src="{{ artist.image.url }}">
-						<span class="tile-date redtxt">{{ artist.name }} </span>
-					</strong>
-				</div>
+							<strong>
+								<span class="tile-date redtxt">{{ artist.name }} </span>
+							</strong>
+					</div>
+				</a>
 			{% endfor %}
 		</div>
 	</div>
