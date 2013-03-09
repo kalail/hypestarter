@@ -14,5 +14,8 @@ urlpatterns = patterns('',
     # Landing
     url(r'^landing/', include('landing.urls')),
     url(r'^$', 'hypestarter.views.index', name='index'),
+    # Artists
+    url(r'^artists/', include('artists.urls')),
+
 # Serve media files in development.
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
