@@ -23,6 +23,7 @@
 			{% for artist in artists %}
 				<div class="explore_artist">
 					<strong>
+						<a aref="{% url artists.views.show artist.id %}"/>
 						<img src="{{ artist.image.url }}">
 						<span class="tile-date redtxt">{{ artist.name }} </span>
 					</strong>
