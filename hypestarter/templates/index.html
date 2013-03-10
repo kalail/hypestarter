@@ -16,14 +16,19 @@
 
 <br>
 <br>
-<br>
-<br>
 
 <section class="container">
     <div class="row">
 		<div id="container">
 			{% for artist in artists %}
-				<div class="explore_artist"><img src="{{ artist.image.url }}"></div>
+				<a href="{% url 'artists.views.show' artist.id %}">
+					<div class="explore_artist">
+						<img src="{{ artist.image.url }}">
+							<strong>
+								<span class="tile-date redtxt">{{ artist.name }} </span>
+							</strong>
+					</div>
+				</a>
 			{% endfor %}
 		</div>
 	</div>

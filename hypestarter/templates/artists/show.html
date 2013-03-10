@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+
+{% block navbar %}
+{% include "_navbar.html" with active='explore' %}
+{% endblock navbar %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/explore.css" type="text/css">
+{% endblock css %}
+<head>
+
+</head>

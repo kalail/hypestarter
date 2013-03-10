@@ -22,6 +22,15 @@ class Artist(models.Model):
 	bio = models.TextField(blank=True)
 	genre = models.ForeignKey(Genre)
 	image = models.ImageField(upload_to='artist_images')
+	image_alt = models.ImageField(upload_to='artist_images', blank=True)
+	# Social
+	twitter_handle = models.CharField(max_length=128, blank=True)
+	itunes_link = models.URLField(max_length=256, blank=True)
+	soundcloud_page = models.URLField(max_length=256, blank=True)
+	youtube_page = models.URLField(max_length=256, blank=True)
+	bandcamp_page = models.URLField(max_length=256, blank=True)
+	facebook_page = models.URLField(max_length=256, blank=True)
+
 
 	def __unicode__(self):
 		return self.name
