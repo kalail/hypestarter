@@ -29,7 +29,7 @@
                                         <img class="tile-pre-img" src="{{ artist.image.url }}" alt="Article 1" />
                                     </li>
                                     <li>
-                                        <img class="tile-pre-img" src="{{ artist.image.url }}" alt="Article 1" />
+                                        <img class="tile-pre-img" src="{{ artist.image_alt.url }}" alt="Article 1" />
                                     </li>
                                 </ul>
                             </div>
@@ -116,15 +116,60 @@
 
                     </div><!-- end post-meta -->
                     <div id="twitter" class="widget">
+                        <img class="tile-pre-img" src="{{ STATIC_URL }}images/TweetMap.gif" alt="Article 1"
+                        width="325"
+                        height="250"/>
+                    </div><!-- end #twitter -->
+                    <div id="twitter" class="widget">
                         <h5>Latest Tweets</h5>
                         <ul id="tweeter"></ul>
                     </div><!-- end #twitter -->
                     
-                    <div class="widget text-widget">
-                        <h5>Badges & Perks</h5>
-                        <p>Just some plain text, nothing special here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis sollicitudin aliquet. Nullam ut sapien eros, aliquet gravida turpis. Cras nec risus magna.</p>
-                    </div><!-- end .text-widget -->
-                
+                      
+                    
+                    <div id="post-meta" class="widget" >
+                        <div class="tile-sidebar" >
+                            <div class="meta1">
+                                <img class="tile-pre-img" src="{{ STATIC_URL }}images/fans/sterling_pic.jpg" alt="Article 1"
+                                        />
+                                <div class="count">44</div>
+                                <div class="comment-widget">
+                                    <a href="http://twitter.com/@23sterling"><div class="comment-count">44</div></a>
+                                    
+                                </div>
+                            </div><!-- end .meta1 -->
+                        </div><!-- end .tile-sidebar -->
+                        <div class="tile-sidebar" >
+                            <div class="meta2">
+                                <img class="tile-pre-img" src="{{ STATIC_URL }}images/fans/colton_pic.jpg" alt="Article 1"
+                                        />
+                                <div class="count">35</div>
+                                <div class="comment-widget">
+                                    <a href="http://twitter.com/@cadillion"><div class="comment-count">35</div></a>
+                                    
+                                </div>
+                            </div><!-- end .meta1 -->
+                        </div><!-- end .tile-sidebar -->
+                        <div class="tile-sidebar" >
+                            <div class="meta2">
+                                <img class="tile-pre-img" src="{{ STATIC_URL }}images/fans/cuban_pic.jpg" alt="Article 1"
+                                        />
+                                <div class="count">20</div>
+                                <div class="comment-widget">
+                                    <a href="http://twitter.com/@mcuban"><div class="comment-count">20</div></a>
+                                    
+                                </div>
+                            </div><!-- end .meta1 -->
+                        </div><!-- end .tile-sidebar -->
+                    </div>
+                       
+                        
+
+                   
+
+                                
+                                
+                                
 
                     <div id="archive-box" class="widget">
                         <h5>Tour Dates</h5>
@@ -206,6 +251,7 @@
 
         </section><!-- end #container -->
     </div>
+
 
 
 {% endblock content %}
