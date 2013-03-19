@@ -1,0 +1,68 @@
+@charset "utf-8";
+/*-----------------------------------------------------------------------------
+Matrix Responsive HTML Template - Core CSS
+-------------------------------------------------------------------------------
+Version : 1.2.3
+Date : 21 / 02 / 2013
+Author : Billy Foo
+-----------------------------------------------------------------------------*/
+
+.twitter-timeline {
+   display: block;
+   margin: 0 auto;
+   float:none;
+}
+#tweet {
+   padding: 0px 20px 0px 10px;
+   width: 100%;
+   font-size: 12px;
+   background: #fff;
+   float: left;
+   color: #aaa;
+}
+
+ #tweet ul {
+   display: block;
+   list-style: none;
+   padding: 5px 5px;
+   margin:0;
+   line-height: 2px;
+}
+
+#tweet img {
+   float: left;
+   margin: 0 0px 0 0;
+}
+
+#tweet li {
+   clear: both;
+   margin: 10px 10px 10px 0;
+   min-height: 60px;
+   height: 100%;
+   position: relative;
+   padding-right: 70px;
+   border-bottom: 1px solid #CCC;
+}
+
+#tweet li:nth-last-child(1) {
+   border: none;
+   height: 50px;
+}
+
+#tweet a.timestamp {
+    background:none;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #bbb;
+}
+
+#tweet .tweet_text {
+   margin-left: 68px;
+}
+
+#tweet .tweet_text a {
+   color: #666;
+   text-decoration: none;
+}

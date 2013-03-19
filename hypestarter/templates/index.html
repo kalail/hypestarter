@@ -11,6 +11,11 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/explore.css" type="text/css">
 {% endblock css %}
 
+{% import feedparser
+
+TwitterSearchFeed = feedparser.parse("http://search.twitter.com/search.atom?q=aea09")
+
+ $}
 
 {% block content %}
 
