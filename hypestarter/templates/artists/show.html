@@ -36,9 +36,11 @@
                                     <li>
                                         <img class="tile-pre-img" src="{{ artist.image.url }}" alt="Article 1" />
                                     </li>
-                                    <li>
-                                        <img class="tile-pre-img" src="{{ artist.image_alt.url }}" alt="Article 1" />
-                                    </li>
+                                    {% if artist.image_alt %}
+                                        <li>
+                                            <img class="tile-pre-img" src="{{ artist.image_alt.url }}" alt="Article 1" />
+                                        </li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
