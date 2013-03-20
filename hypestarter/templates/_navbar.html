@@ -7,8 +7,9 @@
             <div class="container">
                 <a href="/" class="brand">AXShype</a>
                 <ul class="nav">
-                    <li {% if active == 'home' %} class="active" {% endif %}><a href="#">Home </a></li>
-                    <li {% if active == 'blog' %} class="active" {% endif %}><a href="#">Explore</a></li>
+                    <li {% if active == 'home' %} class="active" {% endif %}><a href="{% url 'landing' %}">Home</a></li>
+                    <li {% if active == 'blog' %} class="active" {% endif %}><a href="{% url 'index' %}">Explore</a></li>
+                    <li {% if active == 'hot' %} class="active" {% endif %}><a href="{% url 'hot_artists' %}">Hot</a></li>
                     <li {% if active == 'about' %} class="active" {% endif %}><a href="#">About</a></li>
 
                     {% if user.is_authenticated %}
