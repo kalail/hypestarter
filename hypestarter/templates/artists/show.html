@@ -72,12 +72,16 @@
 
                          <div id="recent-box" class="widget">
                             <h5>Songs</h5>
-                            <h2>
-                                <iframe width="95%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F78165922"></iframe>
-                            </h2>   
-                            <h2>
-                                <iframe width="95%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F80790984"></iframe>
-                            </h2>
+                            {% if artist.song_1 %}                           
+                                <h2>
+                                    {{ artist.song_1|safe }}
+                                </h2>   
+                            {% endif %}
+                            {% if artist.song_2 %}
+                                <h2>
+                                    {{ artist.song_2|safe }}
+                                </h2>
+                            {% endif %}
                         </div><!-- end #recent-box -->
                         
                         

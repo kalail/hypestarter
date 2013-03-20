@@ -30,6 +30,9 @@ class Artist(models.Model):
 	youtube_page = models.URLField(max_length=256, blank=True)
 	bandcamp_page = models.URLField(max_length=256, blank=True)
 	facebook_page = models.URLField(max_length=256, blank=True)
+	# Songs
+	song_1 = models.TextField(blank=True)
+	song_2 = models.TextField(blank=True)
 
 
 	def __unicode__(self):
