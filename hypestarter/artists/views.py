@@ -22,3 +22,15 @@ def show(request, artist_id):
 		},
 		context_instance=RequestContext(request)
 	)
+
+
+@login_required
+def hot(request):
+	"""Hot Page
+
+	Displays the artists that are hot right now.
+
+	"""
+	return render_to_response('artists/hot.html',
+		context_instance=RequestContext(request)
+	)
