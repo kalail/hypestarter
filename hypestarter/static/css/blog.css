@@ -1,0 +1,164 @@
+@charset "utf-8";
+/*-----------------------------------------------------------------------------
+Matrix Responsive HTML Template - Core CSS
+-------------------------------------------------------------------------------
+Version : 1.2.3
+Date : 21 / 02 / 2013
+Author : Billy Foo
+-----------------------------------------------------------------------------*/
+body{
+  font:62.5%/1.5 "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.red{
+  background-color:#E61400 !important;
+}
+.redtxt{
+  color:#E61400 !important;
+}
+
+.article-date{
+  float:left;
+  margin:5px 30px 0 0;
+  color:#7f7f7f;
+  position:relative;
+}
+
+.article-date span.date{
+  font-size:6em;
+}
+
+.article-date span.month{
+  font-size:2em;
+  position:absolute;
+  left:5px;
+  top:70px;
+}
+
+#container{
+  max-width:960px;
+  max-height: 140px;
+  text-align:top;
+  margin:auto;
+  padding-top:50px;
+  border-bottom: 1px solid #CCC;
+}
+
+
+.explore_artist
+{
+  width: 220px;
+  margin: 10px;
+  float: left;
+  box-shadow: 0px 0px 15px black;
+  opacity:0.75;
+  text-align: center;
+}
+
+.explore_artist:hover
+{
+  opacity: 1;
+  box-shadow: 0px 0px 20px black;
+  
+}
+
+.explore_artistname
+{
+  
+}
+
+
+
+
+
+
+
+
+
+#post-meta{
+  color:#fff;
+  margin-bottom:10px;
+}
+#post-meta .tile-sidebar{
+  width:130px;
+  height:130px;
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+}
+#post-meta .tile-sidebar .meta1 > img,
+#post-meta .tile-sidebar .meta2 > img,
+#post-meta .tile-sidebar .meta3 > img{
+  position:absolute;
+  top:15px;
+  left:15px;
+  transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  -o-transition:all 0.3s;
+}
+#post-meta .count{
+  font-size:0.9em;
+  position:absolute;
+  bottom:5%;
+  left:10%;
+  transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  -o-transition:all 0.3s;
+}
+.comment-widget .comment-count{
+  color:#000;
+  background:#fff;
+  padding:10px;
+  min-width:25px;
+  text-align:center;
+}
+.comment-widget .comment-count:hover{
+  text-decoration:underline;
+}
+.comment-widget .comment-quick-reply{
+  background:url(images/comment-widget.png) no-repeat;
+  width:45px;
+  height:30px;
+  line-height:28px;
+  text-indent:6px;
+}
+.comment-widget .comment-quick-reply:hover{
+  text-decoration:underline;
+}
+#post-meta .comment-widget{
+  left:27%;
+}
+#post-meta .fb-like{
+  left:27%;
+}
+#post-meta .twitter-share-button{
+  top:15px;
+  left:29%;
+}
+#post-meta .comment-widget,
+#post-meta .fb-like,
+#post-meta .twitter-share-button{
+  position:absolute;
+  top:-100%;
+  transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  -o-transition:all 0.3s;
+  display:block;
+}
+#post-meta .tile-sidebar:hover .meta1 > img,
+#post-meta .tile-sidebar:hover .meta2 > img,
+#post-meta .tile-sidebar:hover .meta3 > img{
+  top:-100%;
+}
+#post-meta .tile-sidebar:hover .count{
+  bottom:-100%;
+}
+#post-meta .tile-sidebar:hover .comment-widget,
+#post-meta .tile-sidebar:hover .fb-like,
+#post-meta .tile-sidebar:hover .twitter-share-button{
+  top:20%;
+}
+

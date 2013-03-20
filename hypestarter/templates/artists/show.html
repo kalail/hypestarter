@@ -181,15 +181,7 @@
                             </div><!-- end .meta1 -->
                         </div><!-- end .tile-sidebar -->
                     </div>
-                       
-                        
-
-                   
-
-                                
-                                
-                                
-
+ 
                     <div id="archive-box" class="widget">
                         <h5>Tour Dates</h5>
                         <table id="archive">
@@ -280,34 +272,30 @@
     <script src="{{ STATIC_URL }}js/jquery.masonry.js"></script>
     <script src="{{ STATIC_URL }}js/explore.js"></script>
     <script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
+    function placeTweet() {
+        getTwitters('tweet', { 
+            id: '{{ artist.twitter_handle }}',    // replace this with your twitter username
+            count: 4,                // how many tweets do you want to display?
+            enableLinks: true,       // true or false, are links clickable?
+            ignoreReplies: true,     // true or false, are replies hidden in the feed?
 
-function placeTweet() {
-    getTwitters('tweet', { 
-        id: '{{ artist.twitter_handle }}',    // replace this with your twitter username
-        count: 4,                // how many tweets do you want to display?
-        enableLinks: true,       // true or false, are links clickable?
-        ignoreReplies: true,     // true or false, are replies hidden in the feed?
+            template: '<a href="http://twitter.com/%user_screen_name%"><img src="%user_profile_image_url%"></a> <div class="tweet_text">%text%</div> <a class="timestamp" href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
+                //http://twitter.com/%user_screen_name%
 
-        template: '<a href="http://twitter.com/%user_screen_name%"><img src="%user_profile_image_url%"></a> <div class="tweet_text">%text%</div> <a class="timestamp" href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
-            //http://twitter.com/%user_screen_name%
-
-        
+            
+        });
+    };
+    $(document).ready(function() {
+        placeTweet();
     });
-};
-    
 
-$(document).ready(function() {
-    placeTweet();
-});
-
-// If you are placing your twitter feed in the Custom HTML area,
-// remove these three following lines:
-$(document).bind("projectLoadComplete", function(e, pid){
-    placeTweet();          
-});
-
-</script>
+    // If you are placing your twitter feed in the Custom HTML area,
+    // remove these three following lines:
+    $(document).bind("projectLoadComplete", function(e, pid){
+        placeTweet();          
+    });
+    </script>
 
 
     <script src="{{ STATIC_URL }}js/scripts/jquery.masonry.min.js" type="text/javascript"></script>
