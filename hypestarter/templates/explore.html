@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load url from future %}
+{% load thumbnail %}
 
 
 {% block navbar %}
@@ -28,7 +29,9 @@ TwitterSearchFeed = feedparser.parse("http://search.twitter.com/search.atom?q=ae
 			{% for artist in artists %}
 				<a href="{% url 'artists.views.show' artist.id %}">
 					<div class="explore_artist">
-						<img src="{{ artist.image.url }}">
+						{% thumbnail artist.image '280x180' crop='center' as img %}
+							<img src="{{ img.url }}">
+						{% endthumbnail %}
 							<strong>
 								<span>
 								<a class="explore_artistname">{{ artist.name }} </a>

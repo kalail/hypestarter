@@ -50,6 +50,7 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
+	'sorl.thumbnail',
 	
 	# Third party
 	'south',
