@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load url from future %}
-
+{% load thumbnail %}
 
 {% block navbar %}
 {% include "_navbar.html" with active='hot' %}
@@ -26,323 +26,40 @@
 </section>
 <br>
 
-<!--                   -->
-<!--    Macklemore     -->
-<!--                   -->
+
+{% for artist in artists %}
 <section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">01</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/macklemore.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
+	<div class="article-date redtxt">
+		<span class="date">{{ forloop.counter }}</span>    
+	</div>
+	<div id="post-meta" class="widget">
 
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F20808761&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
+		<div class="tile-sidebar">
+			{% thumbnail artist.image '130x130' crop='center' as img %}
+				<img src='{{ img.url }}'>
+			{% endthumbnail %}
+				<strong>
+					<span>
+					<a class="explore_artistname">{{ artist.name }}</a>
+					</span>
+				</strong>
+			</img>
+		</div>
 
-<!--                   -->
-<!--     Rich Hil      -->
-<!--                   -->
-<section class="container">	
+		 {{ artist.song_1|safe }}
+		<div class="tile-sidebar" style="background:#3cf">
 
-			<div class="article-date redtxt">
-		        <span class="date">02</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/rich_hil.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F44471118&amp;show_artwork=false"></iframe>
-	          	<div class="tile-sidebar" style="background:#3cf">
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
+            <div class="meta3">
+            	<img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
+            	<div class="count"></div>
+            	<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
+            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div><!-- end .meta3 -->
+        </div><!-- end .tile-sidebar -->		            
 	</div>
 </section>
-
-<!--                   -->
-<!--    White Panda    -->
-<!--                   -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">03</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/white_panda.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F78165922&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-<!--                       -->
-<!--    Kendrick Lamar     -->
-<!--                       -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">04</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/kendrick_lamar.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F36691050&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-<!--                     -->
-<!--    Hoodie Allen     -->
-<!--                     -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">05</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/hoodie_allen.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F19469282&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-<!--                   -->
-<!--    A$AP ROCKY     -->
-<!--                   -->
-<section class="container">	
-
-			<div class="article-date redtxt">
-		        <span class="date">06</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/asap_rocky.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F76130662&amp;show_artwork=false"></iframe>
-	          	<div class="tile-sidebar" style="background:#3cf">
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-	</div>
-</section>
-
-<!--                   -->
-<!--    Janne Saar     -->
-<!--                   -->
-
-
-<section class="container">	
-
-			<div class="article-date redtxt">
-		        <span class="date">07</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/janne_saar.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F67601043&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-
-<!--                   -->
-<!--    Meg Mac        -->
-<!--                   -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">08</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/meg_mac.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	<iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F67525305&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-<!--                       -->
-<!--   		 C2C  		   -->
-<!--                       -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">09</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/C2C.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F82938068&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-<!--                     -->
-<!--    Sohn     -->
-<!--                     -->
-<section class="container">	
-			<div class="article-date redtxt">
-		        <span class="date">10</span>    
-		    </div>
-		    <div id="post-meta" class="widget">
-				
-					<div class="tile-sidebar">
-						<img src="{{ STATIC_URL }}images/artists/sohn.jpg">
-							<strong>
-								<span>
-								<a class="explore_artistname">colton</a>
-								</span>
-							</strong>
-						</img>
-					</div>
-
-		    	 <iframe width="60%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F82793820&amp;show_artwork=false"></iframe>
-				<div class="tile-sidebar" style="background:#3cf">
-	          
-                            <div class="meta3">
-                            <img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-                            <div class="count"></div>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div><!-- end .meta3 -->
-                        </div><!-- end .tile-sidebar -->		            
-				</div>
-</section>
-
-
+	
+{% endfor %}
 
 {% endblock content %}
 

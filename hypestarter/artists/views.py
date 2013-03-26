@@ -6,7 +6,6 @@ from django.template import RequestContext
 from .models import Artist
 
 
-@login_required
 def show(request, artist_id):
 	"""Show Page
 
@@ -24,13 +23,16 @@ def show(request, artist_id):
 	)
 
 
-@login_required
 def hot(request):
 	"""Hot Page
 
 	Displays the artists that are hot right now.
 
 	"""
+	artists = Artist.objects.all()[:5]
 	return render_to_response('artists/hot.html',
+		{
+			'artists': artists
+		},
 		context_instance=RequestContext(request)
 	)
