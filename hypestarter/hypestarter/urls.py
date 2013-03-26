@@ -11,11 +11,13 @@ urlpatterns = patterns('',
     # Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    # Landing
-    url(r'^landing/', include('landing.urls')),
-    url(r'^$', 'hypestarter.views.index', name='index'),
     # Artists
     url(r'^artists/', include('artists.urls')),
+    # Other
+    url(r'^explore/$', 'hypestarter.views.explore', name='explore'),
+    url(r'^home/$', 'hypestarter.views.home', name='home'),
+    # Landing
+    url(r'', include('landing.urls')),
 
 # Serve media files in development.
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -66,8 +66,8 @@ import djcelery
 djcelery.setup_loader()
 
 
-LOGIN_URL = '/landing/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/home/'
 LOGIN_ERROR_URL = '/login-error/'
 
 AUTHENTICATION_BACKENDS = (

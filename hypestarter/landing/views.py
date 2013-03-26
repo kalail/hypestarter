@@ -45,4 +45,4 @@ def logout(request):
 	"""
 	auth.logout(request)
 	messages.success(request, 'Logged out!')
-	return HttpResponseRedirect(reverse('landing'))
+	return HttpResponseRedirect(reverse('index'))
