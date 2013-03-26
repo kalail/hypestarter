@@ -7,7 +7,7 @@ from django.contrib import auth, messages
 
 from .models import Featured
 
-def landing(request):
+def index(request):
 	"""Landing
 
 	Landing page for the website.
@@ -19,7 +19,7 @@ def landing(request):
 	except Featured.DoesNotExist:
 		featured = None
 	return render_to_response(
-		'landing/landing.html',
+		'landing/index.html',
 		{
 			'featured': featured,
 		},
