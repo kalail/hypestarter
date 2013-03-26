@@ -4,8 +4,8 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.contrib import auth, messages
 
-
 from .models import Featured
+
 
 def index(request):
 	"""Landing
@@ -26,6 +26,7 @@ def index(request):
 		context_instance=RequestContext(request)
 	)
 
+
 def about(request):
 	"""About Page
 
@@ -36,6 +37,7 @@ def about(request):
 		'landing/about.html',
 		context_instance=RequestContext(request)
 	)
+
 
 def logout(request):
 	"""Logout View
