@@ -1,6 +1,6 @@
 {% load url from future %}
 
-
+<!--
 <section class="container">
     <nav class="navbar">
         <div class="navbar-inner">
@@ -23,3 +23,70 @@
         </div>
     </nav>
 </section>
+-->
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/nav.css" type="text/css">
+
+
+{% endblock css %}
+    <nav class="navbar">
+            <div class="header__inner fixed g-dark g-transition-transform sc-browsers-enable-gpu sc-border-box"> 
+              
+
+                <div class="container">
+                    <div class="header__left left">
+                        <nav class="left">
+                            <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud"width="82" height="44"/>
+                        </nav>
+                        <ul class="nav header__navMenu header__mainMenu">
+                            <li {% if active == 'home' %} class="header__explore-wrapper" {% endif %}>
+                                <a class="g-dark a" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <ul class="nav header__navSearch header__mainSearch">
+                                <li class="header__search-wrapper">
+                                    <form action="/search" class="" style=""> 
+                                        <input class="quicksearch__input input g-all-transitions-300" 
+                                        placeholder="Search" 
+                                        type="search" 
+                                        name="q" 
+                                        autocomplete="off" 
+                                        aria-label="Search" 
+                                        aria-autocomplete="list" 
+                                        aria-owns="searchMenuList" 
+                                        x-webkit-speech="" 
+                                        style=""> 
+                                    </form>
+                                </li>
+                            </ul>
+                            
+                        </ul>
+                            
+                        
+                    </div>
+                    
+
+                    <div class="header__right right">
+                        <ul class="nav header__navMenu header__mainMenu">
+                            
+                            <li {% if active == 'explore' %} class="header__explore-wrapper" {% endif %}>
+                                <a href="{% url 'explore' %}">Explore</a>
+                            </li>
+                            <li {% if active == 'hot' %} class="header__explore-wrapper" {% endif %}>
+                                <a href="{% url 'hot_artists' %}">Hot</a>
+                            </li>
+                            <li {% if active == 'about' %} class="header__explore-wrapper" {% endif %}>
+                                <a href="{% url 'about' %}">About</a>
+                            </li>
+
+                    {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Sign out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'socialauth_begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}">Sign in</a></li>
+                    {% endif %}
+
+                </ul>
+            
+                </div> 
+            </div> 
+        </div>
+    </nav>
