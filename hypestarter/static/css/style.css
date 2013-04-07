@@ -13,6 +13,14 @@ body{
 	font:62.5%/1.5 "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+.left {
+    float:left;
+}
+
+.right {
+    
+}
+
 
 #container{
 	max-width:960px;
