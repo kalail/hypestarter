@@ -7,7 +7,7 @@
   container.imagesLoaded(function() {
     return container.masonry({
       itemSelector: '.explore_artist',
-      columnWidth: 240
+      columnWidth: 220
     });
   });
 

@@ -2,11 +2,12 @@
 .explore_artist
 {
 	width: 220px;
-	margin: 10px;
+	margin: 0px;
 	float: left;
-	box-shadow: 0px 0px 15px black;
+	box-shadow: 0px 0px 20px black;
 	opacity:0.75;
 	text-align: center;
+		overflow-y: hidden;
 }
 
 .explore_artist:hover
@@ -19,4 +20,9 @@
 .explore_artistname
 {
 	
+}
+
+.container{
+	width: 100%;
+
 }
