@@ -1,29 +1,5 @@
 {% load url from future %}
 
-<!--
-<section class="container">
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <div class="container">
-                <a href="{% url 'index' %}" class="brand">AXShype</a>
-                <ul class="nav">
-                    <li {% if active == 'home' %} class="active" {% endif %}><a href="{% url 'home' %}">Home</a></li>
-                    <li {% if active == 'explore' %} class="active" {% endif %}><a href="{% url 'explore' %}">Explore</a></li>
-                    <li {% if active == 'hot' %} class="active" {% endif %}><a href="{% url 'hot_artists' %}">Hot</a></li>
-                    <li {% if active == 'about' %} class="active" {% endif %}><a href="{% url 'about' %}">About</a></li>
-
-                    {% if user.is_authenticated %}
-                            <li><a href="{% url 'logout' %}">Sign out</a></li>
-                    {% else %}
-                        <li><a href="{% url 'socialauth_begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}">Sign in</a></li>
-                    {% endif %}
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-</section>
--->
 {% block css %}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/nav.css" type="text/css">
 
