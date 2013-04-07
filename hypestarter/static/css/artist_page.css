@@ -513,3 +513,46 @@ ul#port-filter li.filter-current,
 
 }
 
+.img1{
+	position:absolute;
+	bottom:10px; 
+	left:3%; 
+	z-index:1;
+	opacity:.8
+}
+.img2{
+	position:absolute;
+	bottom:10px; 
+	left:25%; 
+	z-index:1;
+	opacity:.8
+}
+.img3{
+	position:absolute;
+	bottom:10px; 
+	left:70%; 
+	z-index:1;
+	opacity:.8
+}
+.img4{
+	position:absolute;
+	bottom:10px;
+	left:90%; 
+	z-index:1;
+	opacity:.8
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
