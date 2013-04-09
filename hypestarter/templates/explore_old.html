@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+{% load thumbnail %}
+
+
+{% block navbar %}
+{% include "_navbar.html" with active='explore' %}
+{% endblock navbar %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/explore.css" type="text/css">
+{% endblock css %}
+
+{% import feedparser
+
+TwitterSearchFeed = feedparser.parse("http://search.twitter.com/search.atom?q=aea09")
+
+ $}
+
+{% block content %}
+
+<section class="container">
+    <div class="row">
+		<div id="container">
+			{% for artist in artists %}
+				<a href="{% url 'artists.views.show' artist.id %}">
+					<div class="explore_artist">
+						{% thumbnail artist.image '280x180' crop='center' as img %}
+							<img src="{{ img.url }}">
+						{% endthumbnail %}
+							<strong>
+								<span>
+								<a class="explore_artistname">{{ artist.name }} </a>
+								</span>
+							</strong>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock content %}
+
+
+{% block js %}
+	<script src="{{ STATIC_URL }}js/jquery.masonry.js"></script>
+	<script src="{{ STATIC_URL }}js/explore.js"></script>
+{% endblock js %}

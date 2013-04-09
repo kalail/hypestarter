@@ -8,76 +8,86 @@ Author : Billy Foo
 -----------------------------------------------------------------------------*/
 body{
 	font:62.5%/1.5 "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-}
 
-.left {
-    float:left;
-}
-
-.right {
-    float:right;
 }
 
 
 #container{
-
 	text-align:center;
-	margin:auto;
+    width:100%;
+    height:100%;
+    overflow-x:scroll;
+    white-space:nowrap;
 }
 
-/* ^^^ Removed ^^^
-    max-width:960px;
-*/
+.box{
+	vertical-align: top;
+    display:inline-block;
+    white-space:normal;
+}
+
+#container{
+    width:100%;
+    float:left;
+    overflow-x:scroll;
+    white-space:nowrap;
+}
 
 .clearfix:after{
 	content:" ";
 	clear:both;
 	height:0;
 	visibility:hidden;
-	display:block;
+
 }
 
 .centered{
-	margin:0 auto;
-}
+	margin:0 auto; }
 
 h1,h2,h3,h4,h5{
-	font-weight:normal;
-}
+	font-weight:normal; }
 h1{
-    font-size:2.0em;
-}
+    font-size:2.0em; }
 h2{
-    font-size:2.6em;
-}
-h3{
-    font-size:2.4em;
-}
-h4{
-    font-size:2.2em;
-}
+    font-size:2.6em; }
 h5{
-    font-size:2.0em;
-}
+    font-size:2.0em; }
 p{
     font-size:1.3em;
 	line-height:1.5em;
 	padding-bottom:20px;
-	font-family:"Helvetica Neue", Arial, Tahoma, sans-serif;
-}
-/*----------------------------------------------------------------------------
-Header
-----------------------------------------------------------------------------*/
+	font-family:"Helvetica Neue", Arial, Tahoma, sans-serif; }
 
-nav > select{
-	display:none;
-	width:310px;
-	background-color:#e5e5e5;
-	color:#404040;
-	padding:0px 0 0 0px;
-	margin-left:auto;
-	margin-right:auto;
-}
+
+.icon{
+	padding-left: 7%;
+	padding-right: 7%; }
+
+.img1{
+	position:absolute;
+	bottom:10px; 
+	left:3%; 
+	z-index:1;
+	opacity:.8 }
+.img2{
+	position:absolute;
+	bottom:10px; 
+	left:25%; 
+	z-index:1;
+	opacity:.8 }
+.img3{
+	position:absolute;
+	bottom:10px; 
+	left:70%; 
+	z-index:1;
+	opacity:.8 }
+.img4{
+	position:absolute;
+	bottom:10 px;
+	left:90%; 
+	z-index:1;
+	opacity:.8 }
+
 
 
 /*----------------------------------------------------------------------------
@@ -89,166 +99,9 @@ Content - Universal
 #content{
 	color:#bfbfbf;
 	margin-top:0px;
-}
-#content-title{
-	font-size:5.8em;
-	font-weight:200;
-	color:#fff;
-	line-height:50px;
-	border-bottom:3px solid;
-	margin:0 0px 10px 5px;
-	padding-left:30px;
-	text-align:left;
-	text-transform:uppercase;
-}
-.content-sub-title{
-	color:#f7f7f7;
-}
-.content-img{
-	padding-bottom:20px;
-	max-width:100%;
-}
-#sidebar a:hover{
-	text-decoration:none;
-}
-.break{
-	width:100%;
-	height:1px;
-	display:block;
-	clear:both;
-	margin:10px 0;
-}
-.one-half,
-.one-third,
-.two-thirds,
-.one-fourth,
-.three-fourths{
-	margin:0 4% 20px 0;
-	float:left;
-	position:relative;
-}
-.one-half h2,
-.one-third h2,
-.two-thirds h2,
-.one-fourth h2,
-.three-fourths h2,
-.one-half h3,
-.one-third h3,
-.two-thirds h3,
-.one-fourth h3,
-.three-fourths h3{
-	color:#f7f7f7;
-}
-.one-half{
-	width:48%;
-}
-.one-third{
-	width:30.66%;
-}
-.two-thirds{
-	width:65%;
-}
-.one-fourth{
-	width:22%;
-}
-.three-fourths{
-	width:74%;
-}
-
-.no-text-dec{
-	text-decoration:none;
-}
-article ul{
-	padding:0 0 20px 20px;
-	font-size:1.4em;
-}
-article ul li{
-	padding:5px 0;
-}
-.section-title{
-	font-size:4.8em;
-	letter-spacing:-0.03em;
-	color:#f7f7f7;
-	padding:10px 0 !important;
-	margin-left:30px;
-	text-transform:uppercase;
-	font-weight:200;
-}
-.enlarge{
-	width:100%;
-	height:100%;
-	background:url(images/bloglistbg.png) repeat;
-	position:absolute;
-	top:0;
-	left:0;
-	transition:opacity 0.3s;
-	-moz-transition:opacity 0.3s;
-	-webkit-transition:opacity 0.3s;
-	-o-transition:opacity 0.3s;
-	opacity:0;
-	filter:alpha(opacity=0);	
-}
-.enlargeicon{
-	background:url(images/enlarge.png) no-repeat center;
-	width:100%;
-	height:100%;
-}
-.enlarge:hover{
-	opacity:1;
-	filter:alpha(opacity=100);
-}
-
-
-/*----------------------------------------------------------------------------
-Content - Single Blog Post
-----------------------------------------------------------------------------*/
-#single{
-	position: fixed;
-	float:left;
-	width:300px;
-	text-align:left;
-	box-shadow: 0px 0px 20px black;
-	z-index:100;
-}
-#single h1,
-#single h2,
-#single h3,
-#single h4,
-#single h5{
-	color:#f7f7f7;
-}
-.post-meta{
-	position:relative;
-	margin-bottom:30px;
-}
-.post-meta-left{
-	float:left;
-	max-width:480px;
-	display:block;
-}
-.sbp-article,
-.spf-article{
-	position:relative;
-	background-color:#404040;
-}
-.sbp-title,
-.spf-title{
-	color:#fbfbfb;
-	padding:0px 0 0 10px;
-	letter-spacing:-0.01em;
-	margin: 0;
-}
-.sbp-content,
-.spf-content{
-	color:#bfbfbf;
-	padding:20px 30px 10px 30px;
-}
-#authorinfo{
-	background:#202020;
-	color:#bfbfbf;
-	position:relative;
-	padding-left:140px;
-	min-height:120px;
+	overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100;
 }
 
 /*----------------------------------------------------------------------------
@@ -256,10 +109,9 @@ Content - middle
 ----------------------------------------------------------------------------*/
 
 #middle{
-	float:right;
 	width: 700px;
 	text-align:left;
-	margin-left: 300px;
+	margin-left: 10px;
 }
 #middle h1,
 #middle h2,
@@ -273,11 +125,10 @@ Content - middle
 Sidebar
 ----------------------------------------------------------------------------*/
 #sidebar{
-	float:right;
+
 	width:310px;
 	height:100%;
 	text-align:left;
-	overflow:hidden;
 	margin-right:5px;
 }
 .widget h5{
@@ -294,15 +145,52 @@ Sidebar
 	margin-bottom:2px;
 	position:relative;
 }
-.widget ul{
-	list-style:none;
+
+
+/*----------------------------------------------------------------------------
+Content - Single Blog Post
+----------------------------------------------------------------------------*/
+#single{
+	position: left;
+	float: left;
+	width:300px;
+	text-align:left;
+	box-shadow: 0px 0px 20px black;
+	z-index:100;
 }
-.widget p{
-	font-size:0.93em;
-	color:#bfbfbf;
-	padding:0 20px;
+#single h1,
+#single h2,
+#single h3,
+#single h4,
+#single h5{
+	color:#f7f7f7;
 }
 
+.sbp-article,
+.spf-article{
+	position:relative;
+	background-color:#404040;
+}
+
+#music {
+	width: 600px;
+	padding-right: 50px;
+}
+
+
+/*----------------------------------------------------------------------------
+Header
+----------------------------------------------------------------------------*/
+
+nav > select{
+	display:none;
+	width:310px;
+	background-color:#e5e5e5;
+	color:#404040;
+	padding:0px 0 0 0px;
+	margin-left:auto;
+	margin-right:auto;
+}
 
 /*--------------------------------Post Meta------------------------------*/
 #post-meta{
@@ -427,22 +315,6 @@ Theme Colours
 	color:#fff !important;
 }
 
-/*-------------------------Browser Specific CSS-----------------------------*/
-noindex:-o-prefocus, #content-title, .page-sub-title h1, .section-title, .widget h5 {
-  font-family:'Segoe UI Light' !important;
-}
-@media all and (-webkit-min-device-pixel-ratio:0) {
-#content-title, .page-sub-title h1, .section-title, .widget h5 {
-  font-family:'Segoe UI Light' !important;
-}
-}
-
-/*----------------------------Mobile Version--------------------------------*/
-@media all and (max-width:640px) {
-.last{
-	margin-right:auto;
-}
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -452,35 +324,9 @@ Version : 1.2.3
 Date : 21 / 02 / 2013
 Author : Billy Foo
 -----------------------------------------------------------------------------*/
-a,
-.list-wrap ul li a,
-ul#port-filter li,
-ul#port-filter li:hover,
-.about-person,
-.price-pre,
-.price-post,
-.hl-txt1,
-.hl-txt2,
-.widget #tweeter li a{
-	color:#19a2de;
-}
-.themecolortxt{
-	color:#19a2de !important;
-}
-ul#nav li.back,
-ul#nav > li li,
-.hl1,
-.hl3,
-#content-title,
-.title-highlight,
-#content .toggle-content,
-.flex-control-paging li a:hover,
-.flex-control-paging li a.flex-active,
-.page,
-.nextpagelink,
-.table-info ul li{
-	border-color:#19a2de;
-}
+
+
+
 .break,
 ul#nav li.current > a,
 ul#nav li li a,
@@ -506,45 +352,6 @@ ul#port-filter li.filter-current,
 .sidebreak{
 	background-color:#19a2de;
 }
-
-.icon{
-	padding-left: 7%;
-	padding-right: 7%;
-
-}
-
-.img1{
-	position:absolute;
-	bottom:10px; 
-	left:3%; 
-	z-index:1;
-	opacity:.8
-}
-.img2{
-	position:absolute;
-	bottom:10px; 
-	left:25%; 
-	z-index:1;
-	opacity:.8
-}
-.img3{
-	position:absolute;
-	bottom:10px; 
-	left:70%; 
-	z-index:1;
-	opacity:.8
-}
-.img4{
-	position:absolute;
-	bottom:10px;
-	left:90%; 
-	z-index:1;
-	opacity:.8
-}
-
-
-
-
 
 
 

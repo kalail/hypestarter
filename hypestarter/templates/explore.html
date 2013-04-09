@@ -9,42 +9,133 @@
 {% endblock navbar %}
 
 {% block css %}
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/explore.css" type="text/css">
+
+
+<link href="{{ STATIC_URL }}css/explore.css" title="style" rel="stylesheet" type="text/css" />
+
+
+
 {% endblock css %}
 
-{% import feedparser
-
-TwitterSearchFeed = feedparser.parse("http://search.twitter.com/search.atom?q=aea09")
-
- $}
-
 {% block content %}
+<!-- 
+<div id="loader"></div> loader image for AJAX -->
 
-<section class="container">
-    <div class="row">
-		<div id="container">
+<div class="container">
 			{% for artist in artists %}
-				<a href="{% url 'artists.views.show' artist.id %}">
-					<div class="explore_artist">
-						{% thumbnail artist.image '280x180' crop='center' as img %}
-							<img src="{{ img.url }}">
-						{% endthumbnail %}
-							<strong>
-								<span>
-								<a class="explore_artistname">{{ artist.name }} </a>
-								</span>
-							</strong>
-					</div>
+	<!-- medium small small large small small -->
+			{% if forloop.counter == 1 %}
+				<!-- MEDIUM HORIZONTAL BOX -->
+			<div class="box">
+				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
+				    <div class="tile large live" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
+				    	<div class="live-front">
+				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+	    						<img class="live-img" src="{{ img.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+				        <div class="live-back">
+				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+	    						<img class="live-img" src="{{ img_alt.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+			
+				        <span class="tile-cat lime">{{ artist.name }}</span>
+				    </div>
 				</a>
+
+			{% elif forloop.counter == 4 %}
+				<!-- MEDIUM HORIZONTAL BOX -->
+
+				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
+				    <div class="tile medium live" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
+				    	<div class="live-front">
+				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+	    						<img class="live-img" src="{{ img.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+				        <div class="live-back">
+				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+	    						<img class="live-img" src="{{ img_alt.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+			
+				        <span class="tile-cat lime">{{ artist.name }}</span>
+				    </div>
+				</a>
+
+			{% elif forloop.counter == 2 or forloop.counter == 3 or forloop.counter == 5 %}
+
+				<!-- SMALL BOX -->
+				
+					<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
+	    				<div class="tile small">
+	    				<div class="live-front">
+				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+	    						<img class="live-img" src="{{ img.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+				        <div class="live-back">
+				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+	    						<img class="live-img" src="{{ img_alt.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+	    				</div>
+					</a> 
+
+			{% elif forloop.counter == 6 %}		   
+
+				<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
+	    			<div class="tile small">
+	    				<!-- hello -->
+	    				<div class="live-front">
+				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+	    						<img class="live-img" src="{{ img.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+				        <div class="live-back">
+				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+	    						<img class="live-img" src="{{ img_alt.url }}"/>
+	    					{% endthumbnail %}
+				        </div>
+	    			</div>
+				</a> 
+				</div>
+			
+
+
+			{% endif %}
+
+			</div>
 			{% endfor %}
-		</div>
-	</div>
-</section>
+    
+
+
+</div>
+
+
+
+
 
 {% endblock content %}
 
 
 {% block js %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/MetroJs.lt.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.fancybox-1.3.4.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/hoverintent.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.jplayer.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/organictabs.jquery.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="{{ STATIC_URL }}js/metro/javascript.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/mediaplayer.js" type="text/javascript"></script>
+
+
 	<script src="{{ STATIC_URL }}js/jquery.masonry.js"></script>
 	<script src="{{ STATIC_URL }}js/explore.js"></script>
 {% endblock js %}
