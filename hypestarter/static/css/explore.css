@@ -20,12 +20,7 @@ a{
 
 body{
 	font:62.5%/1.5 "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-	background:url(images/background7.jpg) center top no-repeat #888;
-	background-attachment:fixed;
-	background-size:cover;
-	-moz-background-size:cover;
-	-webkit-background-size:cover;
-	-o-background-size:cover;
+
 }
 
 #bodypat{
@@ -34,7 +29,7 @@ body{
 	height:100%;
 }
 .box{
-	width: 300px;
+	width: 320px;
     display:inline-block;
     *dsplay:inline;/* For IE7*/
     *zoom:1;/* For IE7*/
@@ -103,65 +98,6 @@ p{
 	line-height:1.5em;
 	padding-bottom:20px;
 	font-family:"Helvetica Neue", Arial, Tahoma, sans-serif;
-}
-/*----------------------------------------------------------------------------
-Header
-----------------------------------------------------------------------------*/
-header a{
-	border:none;
-	text-decoration:none;
-}
-header{
-	min-height:100px;
-	margin:0 5px 10px 5px;
-	background:rgb(255,255,255); /* The Fallback */
-	background:rgba(255,255,255,0.8);
-}
-#headerlink{
-	float:left;
-}
-#logo{
-	display:inline;
-	margin:23px 0 0 20px;
-	vertical-align:top;
-	width:60px;
-}
-#sitename{
-	font-size:7.2em;
-	color:#202020;
-	line-height:100px;
-	margin-left:20px;
-}
-nav{
-	font-size:1.4em;
-	text-transform:uppercase;
-	font-weight:600;
-	display:inline-block;
-	float:right;
-	margin-right:20px;
-	margin-top:40px;
-}
-#nav a{
-	color:#202020;
-}
-/*----------------------------Mobile Version--------------------------------*/
-@media all and (max-width:780px) {
-
-#container{
-	padding-top:10px;
-}
-header{
-	padding-top:25px;
-}
-#headerlink{
-	float:none;
-	display:block;
-}
-nav{
-	margin:0 0 25px 0;
-	float:none;
-}
-	
 }
 /*----------------------------------------------------------------------------
 Navigation
