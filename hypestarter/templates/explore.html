@@ -23,10 +23,14 @@
 
 <div class="container">
 			{% for artist in artists %}
-	<!-- medium small small large small small -->
-			{% if forloop.counter == 1 or forloop.counter == 7 or forloop.counter == 13 or forloop.counter == 19 %}
-				<!-- MEDIUM HORIZONTAL BOX -->
+
+			{% if forloop.counter == 1 or forloop.counter == 7 or forloop.counter == 13 or forloop.counter == 19 or forloop.counter == 25 or forloop.counter == 31 or forloop.counter == 37 or forloop.counter == 43 %}
 			<div class="box">
+	<!-- medium small small large small small -->
+			{% endif %}
+			{% if forloop.counter == 1 or forloop.counter == 10 or forloop.counter == 13 or forloop.counter == 22 or forloop.counter == 25 or forloop.counter == 31 or forloop.counter == 37 or forloop.counter == 43 %}
+				<!-- MEDIUM HORIZONTAL BOX -->
+			
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
 				    <div class="tile large live" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
 				    	<div class="live-front">
@@ -44,7 +48,7 @@
 				    </div>
 				</a>
 
-			{% elif forloop.counter == 4 or forloop.counter == 10 or forloop.counter == 16 or forloop.counter == 22 %}
+			{% elif forloop.counter == 4 or forloop.counter == 7 or forloop.counter == 16 or forloop.counter == 19 or forloop.counter == 4 or forloop.counter == 28 or forloop.counter == 34 or forloop.counter == 38 %}
 				<!-- MEDIUM HORIZONTAL BOX -->
 
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
@@ -64,48 +68,50 @@
 				    </div>
 				</a>
 
-			{% elif forloop.counter == 2 or forloop.counter == 3 or forloop.counter == 5 or forloop.counter == 8 or forloop.counter == 9 or forloop.counter == 11 %}
+			{% elif forloop.counter == 2 or forloop.counter == 3 or forloop.counter == 5 or forloop.counter == 8 or forloop.counter == 9 or forloop.counter == 11 or forloop.counter == 14 or forloop.counter == 15 or forloop.counter == 17 or forloop.counter == 20 or forloop.counter == 21 or forloop.counter == 23 or forloop.counter == 26 or forloop.counter == 27 or forloop.counter == 29 or forloop.counter == 32 or forloop.counter == 33 or forloop.counter == 35 or forloop.counter == 38 or forloop.counter == 39 or forloop.counter == 41 or forloop.counter == 44 or forloop.counter == 45 or forloop.counter == 47 %}
 
 				<!-- SMALL BOX -->
 				
 					<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
 	    				<div class="tile small">
 	    				<div class="live-front">
-				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+				        	{% thumbnail artist.image '180x180' crop='center' as img %}
 	    						<img class="live-img" src="{{ img.url }}"/>
 	    					{% endthumbnail %}
 				        </div>
 				        <div class="live-back">
-				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+				        	{% thumbnail artist.image_alt '180x180' crop='center' as img_alt %}
 	    						<img class="live-img" src="{{ img_alt.url }}"/>
 	    					{% endthumbnail %}
 				        </div>
+				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %} ">{{ artist.name }}</span>
 	    				</div>
 					</a> 
 
-			{% elif forloop.counter == 6 or forloop.counter == 12 %}		   
+			{% elif forloop.counter == 6 or forloop.counter == 12 or forloop.counter == 18 or forloop.counter == 24 or forloop.counter == 30 or forloop.counter == 36 or forloop.counter == 42 or forloop.counter == 48 %}		   
 
 				<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
 	    			<div class="tile small">
 	    				<!-- hello -->
 	    				<div class="live-front">
-				        	{% thumbnail artist.image '320x180' crop='center' as img %}
+				        	{% thumbnail artist.image '180x180' crop='center' as img %}
 	    						<img class="live-img" src="{{ img.url }}"/>
 	    					{% endthumbnail %}
 				        </div>
 				        <div class="live-back">
-				        	{% thumbnail artist.image_alt '320x180' crop='center' as img_alt %}
+				        	{% thumbnail artist.image_alt '180x180' crop='center' as img_alt %}
 	    						<img class="live-img" src="{{ img_alt.url }}"/>
 	    					{% endthumbnail %}
 				        </div>
 	    			</div>
 				</a> 
-			</div>
 			
-
-
 			{% endif %}
+			<!-- Close Contianer Box Div -->
+			{% if forloop.counter == 6 or forloop.counter == 12 or forloop.counter == 18 or forloop.counter == 24 or forloop.counter == 30 or forloop.counter == 36 or forloop.counter == 42 or forloop.counter == 48 %}
 
+			</div>
+			{% endif %}
 			
 			{% endfor %}
     
@@ -126,7 +132,6 @@
 <script src="{{ STATIC_URL }}js/metro/jquery.masonry.min.js" type="text/javascript"></script>
 <script src="{{ STATIC_URL }}js/metro/jquery.easing.1.3.js" type="text/javascript"></script>
 <script src="{{ STATIC_URL }}js/metro/MetroJs.lt.js" type="text/javascript"></script>
-<script src="{{ STATIC_URL }}js/metro/jquery.fancybox-1.3.4.js" type="text/javascript" charset="utf-8"></script>
 <script src="{{ STATIC_URL }}js/metro/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
 <script src="{{ STATIC_URL }}js/metro/hoverintent.js" type="text/javascript" charset="utf-8"></script>
 <script src="{{ STATIC_URL }}js/metro/jquery.jplayer.min.js" type="text/javascript" charset="utf-8"></script>
