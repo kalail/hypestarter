@@ -112,7 +112,7 @@ $(document).ready(function(){
     function(){    
         $('.tile').removeClass('fade');     
     });
-	$('.tile').append('<img class="tilehover" src="../static/metro/images/tilehover.png" alt=" "/>');
+	$('.tile').append('<img class="tilehover" src="/static/metro/images/tilehover.png" alt=" "/>');
 		
 	//Live-tile effects
 	$(".live").liveTile({pauseOnHover: true});
