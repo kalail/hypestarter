@@ -2,7 +2,7 @@
 
 .header{
     height:45px;
-    background-color:#333;
+    background-color: #000;
     
 
 }
@@ -12,8 +12,8 @@
     min-width:768px
 }
 .header__inner{
-    border-top:1px solid #16ACFE;
-    background: transparent url(images/header-bar-bkg.png) repeat-x 0 0;
+    border-top:1px solid #000;
+    background: transparent url(images/header-bar-bkg-black.png) repeat-x 0 0;
     z-index:1000;
     top:0
 }
