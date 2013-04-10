@@ -28,7 +28,7 @@
             {% if forloop.counter == 1 %}
             
                 
-            {% elif forloop.counter == 4 %}
+            {% elif forloop.counter == 4 or forloop.counter == 8 or forloop.counter == 12 or forloop.counter == 16 or forloop.counter == 20 or forloop.counter == 24 %}
                 <div class="box">
             {% endif %}
 
@@ -52,13 +52,21 @@
                 </div>
             </a>
             
-            {% if forloop.counter == 3 or forloop.counter == 5 %}
+            {% if forloop.counter == 3 or forloop.counter == 7 or forloop.counter == 11 or forloop.counter == 15 or forloop.counter == 19 or forloop.counter == 23 %}
             </div>
 
             {% endif %}
 
             {% endfor %}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
         </div>
+
 
 
 {% endblock content %}

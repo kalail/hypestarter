@@ -29,7 +29,7 @@ def hot(request):
 	Displays the artists that are hot right now.
 
 	"""
-	artists = Artist.objects.all()[:5]
+	artists = Artist.objects.all()[:23]
 	return render_to_response('artists/hot.html',
 		{
 			'artists': artists
