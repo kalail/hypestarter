@@ -10,56 +10,56 @@
 {% block css %}
 <!--
     <link rel="stylesheet" href="{{ STATIC_URL }}css/twitter.css" type="text/css"> -->
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css"> 
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blog.css" type="text/css">
-	
+<!--	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css"> 
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blog.css" type="text/css"> -->
+	<link href="{{ STATIC_URL }}css/hot.css" title="style" rel="stylesheet" type="text/css" />
 
 
 {% endblock css %}
 
 {% block content %}
 
-<br>
-<section class="container">
-	<img src="{{ STATIC_URL }}images/fullmap.jpg">
+<div class="container">
+            <div class="map bigbox">
+                <img  src="{{ STATIC_URL }}images/part-map.png">
+            
+            {% for artist in artists %}
+            
+            {% if forloop.counter == 1 %}
+            
+                
+            {% elif forloop.counter == 4 %}
+                <div class="box">
+            {% endif %}
 
-</section>
-<br>
+            
+            <a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
+                <div class="tile medium live" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
+                    <div class="live-front">
+                        {% thumbnail artist.image '310x150' crop='center' as img %}
+                            <img class="live-img" src="{{ img.url }}"/>
+                        {% endthumbnail %}
+                    </div>
+                    <div class="live-back">
+                        {% thumbnail artist.image_alt '310x150' crop='center' as img_alt %}
+                            <img class="live-img" src="{{ img_alt.url }}"/>
+                        {% endthumbnail %}
+                    </div>
+                    <span class="tile-date redtxt">
+                        <span class="date">{{ forloop.counter }}</span>
+                    </span>
+                    <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %}">{{ artist.name }}</span>
+                </div>
+            </a>
+            
+            {% if forloop.counter == 3 or forloop.counter == 5 %}
+            </div>
 
+            {% endif %}
 
-{% for artist in artists %}
-<section class="container">	
-	<div class="article-date redtxt">
-		<span class="date">{{ forloop.counter }}</span>    
-	</div>
-	<div id="post-meta" class="widget">
+            {% endfor %}
+        </div>
 
-		<div class="tile-sidebar">
-			{% thumbnail artist.image '130x130' crop='center' as img %}
-				<img src='{{ img.url }}'>
-			{% endthumbnail %}
-				<strong>
-					<span>
-					<a class="explore_artistname">{{ artist.name }}</a>
-					</span>
-				</strong>
-			</img>
-		</div>
-
-		 {{ artist.song_1|safe }}
-		<div class="tile-sidebar" style="background:#3cf">
-
-            <div class="meta3">
-            	<img src="{{ STATIC_URL }}images/sidebar-twtr.png" alt="Twitter" />
-            	<div class="count"></div>
-            	<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
-            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div><!-- end .meta3 -->
-        </div><!-- end .tile-sidebar -->		            
-	</div>
-</section>
-	
-{% endfor %}
 
 {% endblock content %}
 
@@ -95,18 +95,21 @@
     </script>
 
 
-    <script src="{{ STATIC_URL }}js/scripts/jquery.masonry.min.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/scripts/jquery.easing.1.3.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/scripts/MetroJs.lt.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/scripts/jquery.fancybox-1.3.4.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ STATIC_URL }}js/scripts/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ STATIC_URL }}js/scripts/hoverintent.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ STATIC_URL }}js/scripts/jquery.jplayer.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ STATIC_URL }}js/scripts/organictabs.jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/MetroJs.lt.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/hoverintent.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/jquery.jplayer.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/metro/organictabs.jquery.js" type="text/javascript" charset="utf-8"></script>
 
-    <script src="{{ STATIC_URL }}js/scripts/javascript.js" type="text/javascript"></script>
-    <script src="{{ STATIC_URL }}js/scripts/mediaplayer.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/javascript.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/metro/mediaplayer.js" type="text/javascript"></script>
+
+
+    <script src="{{ STATIC_URL }}js/jquery.masonry.js"></script>
+    <script src="{{ STATIC_URL }}js/explore.js"></script>
 
 {% endblock js %}
 
