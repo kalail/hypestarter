@@ -12,6 +12,7 @@
 
 
 <link href="{{ STATIC_URL }}css/explore.css" title="style" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/dynamic_tiles.css" title="style" rel="stylesheet" type="text/css" />
 
 
 
@@ -32,7 +33,7 @@
 				<!-- MEDIUM HORIZONTAL BOX -->
 			
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
-				    <div class="tile large live" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
+				    <div class="tile large live tile_dis" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
 				    	<div class="live-front">
 				        	{% thumbnail artist.image '320x320' crop='center' as img %}
 	    						<img class="live-img" src="{{ img.url }}"/>
@@ -52,7 +53,7 @@
 				<!-- MEDIUM HORIZONTAL BOX -->
 
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
-				    <div class="tile medium live" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
+				    <div class="tile medium live tile_dis" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
 				    	<div class="live-front">
 				        	{% thumbnail artist.image '310x150' crop='center' as img %}
 	    						<img class="live-img" src="{{ img.url }}"/>
@@ -73,7 +74,7 @@
 				<!-- SMALL BOX -->
 				
 					<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
-	    				<div class="tile small">
+	    				<div class="tile small tile_dis">
 	    				<div class="live-front">
 				        	{% thumbnail artist.image '150x150' crop='center' as img %}
 	    						<img class="live-img" src="{{ img.url }}"/>

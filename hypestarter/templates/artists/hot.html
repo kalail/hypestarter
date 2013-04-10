@@ -13,6 +13,7 @@
 <!--	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css"> 
     <link rel="stylesheet" href="{{ STATIC_URL }}css/blog.css" type="text/css"> -->
 	<link href="{{ STATIC_URL }}css/hot.css" title="style" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/dynamic_tiles.css" title="style" rel="stylesheet" type="text/css" />
 
 
 {% endblock css %}
@@ -34,7 +35,7 @@
 
             
             <a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
-                <div class="tile medium live" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
+                <div class="tile medium live tile_dis" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
                     <div class="live-front">
                         {% thumbnail artist.image '310x150' crop='center' as img %}
                             <img class="live-img" src="{{ img.url }}"/>
