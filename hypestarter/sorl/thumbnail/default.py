@@ -1,6 +1,6 @@
 from django.utils.functional import LazyObject
-from sorl.thumbnail.conf import settings
-from sorl.thumbnail.helpers import get_module_class
+from .conf import settings
+from .helpers import get_module_class
 
 
 class Backend(LazyObject):
