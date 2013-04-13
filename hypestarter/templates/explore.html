@@ -37,9 +37,11 @@
 				    	<div class="live-front">
     						<img class="live-img" src="{% thumbnail artist.image '320x320' crop='smart' %}"/>
 				        </div>
-				        <div class="live-back">
-    						<img class="live-img" src="{% thumbnail artist.image_alt '320x320' crop='smart' %}"/>
-				        </div>
+				        {% if artist.image_alt %}
+					        <div class="live-back">
+	    						<img class="live-img" src="{% thumbnail artist.image_alt '320x320' crop='smart' %}"/>
+					        </div>
+				        {% endif %}
 			
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %}">{{ artist.name }}</span>
 				    </div>
@@ -53,9 +55,12 @@
 				    	<div class="live-front">				        	
     						<img class="live-img" src="{% thumbnail artist.image '310x150' crop='smart' %}"/>
 				        </div>
-				        <div class="live-back">
-    						<img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
-				        </div>
+				        	
+				        {% if artist.image_alt %}
+					        <div class="live-back">
+	    						<img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
+					        </div>
+				        {% endif %}
 			
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %}">{{ artist.name }}</span>
 				    </div>
@@ -70,9 +75,12 @@
 	    				<div class="live-front">				        	
     						<img class="live-img" src="{% thumbnail artist.image '150x150' crop='smart' %}"/>
 				        </div>
-				        <div class="live-back">
-    						<img class="live-img" src="{% thumbnail artist.image_alt '150x150' crop='smart' %}"/>
-				        </div>
+				        	
+				        {% if artist.image_alt %}
+					        <div class="live-back">
+	    						<img class="live-img" src="{% thumbnail artist.image_alt '150x150' crop='smart' %}"/>
+					        </div>
+				        {% endif %}
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %} ">{{ artist.name }}</span>
 	    				</div>
 					</a>
