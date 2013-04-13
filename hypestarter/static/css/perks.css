@@ -13,46 +13,64 @@ Author : Billy Foo
    float:none;
 
 }
-#tweet {
+#perks {
 
    padding: 0px 0px 0px 0px;
    width: 100%;
-   font-size: 12px;
+   font-size: 14px;
    background: #fff;
    float: left;
    white-space: normal;
 }
 
- #tweet ul {
+#perks ul {
    display: block;
    list-style: none;
-   width: 120%;
+   width: 100%;
    padding: 5px 5px;
-   margin:0;
+   margin: 0px 0px 10px 0px;
    line-height: 2px;
 }
 
-#tweet img {
+#perks img {
    float: left;
    margin: 0 0px 0 0;
 }
 
-#tweet li {
+#perks h2{
+  font-size: 12px;
+   position: absolute; 
+   top: -27px; 
+   left: 18px; 
+  color: #FFF;
+}
+
+#perks h3{
+  font-size: 12px;
+   position: absolute; 
+   top: 0px; 
+   left: 18px; 
+  color: #000;
+  margin-right: 25px;
+}
+
+#perks li {
    clear: both;
    margin: 5px 10px 5px 0;
    min-height: 55px;
    height: 100%;
    position: relative;
-   padding-right: 70px;
+   padding-right: 10px;
    border-bottom: 1px solid #CCC;
+   vertical-align: center;
 }
 
-#tweet li:nth-last-child(1) {
+#perks li:nth-last-child(1) {
    border: none;
    height: 50px;
 }
 
-#tweet a.timestamp {
+#perks a.timestamp {
     background:none;
     text-decoration: none;
     position: absolute;
@@ -61,11 +79,12 @@ Author : Billy Foo
     color: #bbb;
 }
 
-#tweet .tweet_text {
+#perks .perk_text {
    margin-left: 55px;
+   width: 120%;
 }
 
-#tweet .tweet_text a {
+#perks .perk_text a {
    color: #666;
    text-decoration: none;
 }

@@ -45,18 +45,24 @@ body{
 	}
 
 h1,h2,h3,h4,h5{
-	font-weight:normal; }
+	font-weight:normal; 
+
+}
 h1{
     font-size:2.0em; }
 h2{
     font-size:2.6em; }
 h5{
-    font-size:2.0em; }
+    font-size:2.0em; 
+    margin: 0px 0;
+}
 p{
     font-size:1.3em;
 	line-height:1.5em;
 	padding-bottom:20px;
 	font-family:"Helvetica Neue", Arial, Tahoma, sans-serif; }
+
+
 
 
 .icon{
@@ -83,7 +89,7 @@ p{
 	opacity:.8 }
 .img4{
 	position:absolute;
-	bottom:10 px;
+	bottom: 10px;
 	left:90%; 
 	z-index:1;
 	opacity:.8 }
@@ -111,7 +117,7 @@ Content - middle
 #middle{
 	width: 520px;
 	text-align:left;
-	margin-left: 10px;
+	margin-left: 320px;
 }
 #middle h1,
 #middle h2,
@@ -125,7 +131,6 @@ Content - middle
 Sidebar
 ----------------------------------------------------------------------------*/
 #sidebar{
-
 	width:310px;
 	height:100%;
 	text-align:left;
@@ -151,7 +156,8 @@ Sidebar
 Content - Single Blog Post
 ----------------------------------------------------------------------------*/
 #single{
-	position: left;
+	margin-left: 10px;
+	position: fixed;
 	float: left;
 	width:300px;
 	text-align:left;
@@ -164,6 +170,8 @@ Content - Single Blog Post
 #single h4,
 #single h5{
 	color:#f7f7f7;
+	margin: 0px 0;
+	margin-left: 5px;
 }
 
 .sbp-article,

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/artist_tiles.css" type="text/css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/artist_slider.css" type="text/css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/twitter.css" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/perks.css" type="text/css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/artist_page.css" type="text/css">
 
 {% endblock css %}
@@ -50,7 +51,7 @@
                     </div>
                 </div>
                 <h1 class="sbp-title">{{ artist.name }}</h1>
-                <div id="Links" class="widget"/>           
+                     
             </article>
             <div id="twitter" class="widget">
                 <div id="tweet" style="overflow: hidden"></div>       
@@ -106,7 +107,7 @@
                     <div class="meta2">
                         <img class="tile-pre-img" src="{{ STATIC_URL }}images/fans/taylor-pic.jpg" alt="Article 1"
                                 />
-                        <div class="count">20</div>
+                        <div class="count">15</div>
                         <div class="comment-widget">
                             <a href="http://twitter.com/@mcuban">
                                 <div class="comment-count">20</div>
@@ -118,7 +119,7 @@
                     <div class="meta2">
                         <img class="tile-pre-img" src="{{ STATIC_URL }}images/fans/kashif-pic.jpg" alt="Article 1"
                                 />
-                        <div class="count">20</div>
+                        <div class="count">10</div>
                         <div class="comment-widget">
                             <a href="http://twitter.com/@mcuban">
                                 <div class="comment-count">20</div>
@@ -135,7 +136,7 @@
             <div id="post-meta" class="widget">
                 <div class="tile-sidebar">
                     <div class="meta1">
-                    <img src="{{ STATIC_URL }}images/sidebar-comm.png" alt="Comments" />
+                    <img src="{{ STATIC_URL }}images/sidebar-dollar.png" alt="Comments" />
                     <div class="count">4</div>
                     <div class="comment-widget">
                     <a href="#comments"><div class="comment-count">4</div></a>
@@ -172,7 +173,81 @@
             </div><!-- end post-meta -->
             <div id="twitter" class="widget">
                 <h5>PERKS</h5>
-                <div id="tweet"></div>
+                <div id="perks">
+
+                    <ul>
+                        
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/fb-thumb.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> &nbsp 1 </h2>
+                                Three exclusive songs from {{ artist.name }} will be made available for download
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/twitter-bird.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> &nbsp 2 </h2>
+                                An exclusive song from {{ artist.name }} will be made available for download
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/fb-thumb.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> &nbsp 3 </h2>
+                                You'll recieve $5 off a ticket to the next {{ artist.name }} show near you
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/twitter-bird.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> &nbsp 5 </h2>
+                                You'll recieve a signed photo from {{ artist.name }}
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/twitter-bird.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> 20 </h2>
+                                You'll recieve $5 off a ticket to the next {{ artist.name }} show near you
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/twitter-bird.png" style="width: 50px;" alt="Facebook" />  
+                                <h2> 25 </h2>
+                                {{ artist.name }} will skype with you!
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/dollar-5.png" style="width: 50px;" alt="Facebook" /> 
+                                You'll recieve a signed photo from {{ artist.name }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/dollar-10.png" style="width: 50px;" alt="Facebook" /> 
+                                You'll recieve an exclusive {{ artist.name }} tour poster
+                            </div>
+                        </li>
+                        <li>
+                            <div class="perks_text">
+                                <img src="{{ STATIC_URL }}images/dollar-25.png" style="width: 50px;" alt="Facebook" /> 
+                            
+                                You'll recieve an exclusive new t-shirt from {{ artist.name }}
+                            </div>
+                        </li>
+                        
+                     
+                    </ul>
+                </div>
+
+
+
+
+
             </div><!-- end #twitter -->
         </div>
         
