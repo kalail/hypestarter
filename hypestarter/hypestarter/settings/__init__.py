@@ -95,6 +95,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.request',
 )
 
+
+THUMBNAIL_SUBDIR = 'thumbs'
+
 # Import corresponding environment settings.
 try:
 	app_env = os.environ["HYPESTARTER_ENV"]

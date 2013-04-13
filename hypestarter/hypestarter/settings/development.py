@@ -15,6 +15,7 @@ AWS_STORAGE_BUCKET_NAME = 'hypestarter_dev'
 
 DEFAULT_FILE_STORAGE = 'helpers.storages.MediaS3Storage'
 STATICFILES_STORAGE = 'helpers.storages.StaticS3Storage'
+THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 
 # URL prefix for files.
 STATIC_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/static/'
@@ -60,7 +61,7 @@ INSTALLED_APPS = (
 	'social_auth',
 	'crispy_forms',
 	'raven.contrib.django.raven_compat',
-	'sorl.thumbnail',
+	'easy_thumbnails',
 
 	# Project
 	'landing',
