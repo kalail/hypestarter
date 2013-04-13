@@ -1,10 +1,6 @@
-psycopg2
-pylibmc==1.2.3
-django-pylibmc-sasl==0.2.4
-django-suit==0.1.4
 Django==1.4.3
 Fabric==1.5.3
-Pillow==2.0.0
+PIL
 South==0.7.6
 Unipath==0.2.1
 amqp==1.0.6
@@ -19,6 +15,7 @@ django-crispy-forms==1.2.3
 django-extensions==1.0.3
 django-social-auth==0.7.19
 django-storages==1.1.6
+django-suit==0.1.4
 gunicorn==0.17.2
 httplib2==0.7.7
 kombu==2.5.4
@@ -30,8 +27,8 @@ python-dateutil==1.5
 python-openid==2.2.5
 python-twitter==0.8.2
 pytz==2012j
-raven==3.1.10
 selenium==2.29.0
 simplejson==3.0.7
-wsgiref==0.1.2
 sorl-thumbnail==11.12
+wsgiref==0.1.2
+raven==3.1.10

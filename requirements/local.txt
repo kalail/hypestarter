@@ -3,6 +3,7 @@ Fabric==1.5.3
 Pillow==2.0.0
 South==0.7.6
 Unipath==0.2.1
+Werkzeug==0.8.3
 amqp==1.0.6
 anyjson==0.3.3
 argparse==1.2.1

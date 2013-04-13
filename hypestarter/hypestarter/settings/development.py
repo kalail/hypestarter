@@ -50,7 +50,6 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
-	'sorl.thumbnail',
 	
 	# Third party
 	'south',
@@ -58,11 +57,10 @@ INSTALLED_APPS = (
 	'storages',
 	'gunicorn',
 	'django_extensions',
-	'debug_toolbar',
-	'cache_panel',
 	'social_auth',
 	'crispy_forms',
 	'raven.contrib.django.raven_compat',
+	'sorl.thumbnail',
 
 	# Project
 	'landing',
