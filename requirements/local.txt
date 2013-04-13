@@ -32,5 +32,4 @@ python-twitter==0.8.2
 pytz==2012j
 selenium==2.29.0
 simplejson==3.0.7
-sorl-thumbnail==11.12
 wsgiref==0.1.2
