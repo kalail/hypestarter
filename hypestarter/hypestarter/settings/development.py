@@ -82,3 +82,5 @@ MIDDLEWARE_CLASSES = (
 	'debug_toolbar.middleware.DebugToolbarMiddleware',
 	'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
 )
+
+THUMBNAIL_DEBUG = True
