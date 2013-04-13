@@ -33,3 +33,4 @@ wsgiref==0.1.2
 raven==3.1.10
 pylibmc
 django-pylibmc-sasl
+psycopg2
