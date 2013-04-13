@@ -35,14 +35,10 @@
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
 				    <div class="tile large live tile_dis" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
 				    	<div class="live-front">
-				        	{% thumbnail artist.image '320x320' crop='center' as img %}
-	    						<img class="live-img" src="{{ img.url }}"/>
-	    					{% endthumbnail %}
+    						<img class="live-img" src="{% thumbnail artist.image '320x320' crop='smart' %}"/>
 				        </div>
 				        <div class="live-back">
-				        	{% thumbnail artist.image_alt '320x320' crop='center' as img_alt %}
-	    						<img class="live-img" src="{{ img_alt.url }}"/>
-	    					{% endthumbnail %}
+    						<img class="live-img" src="{% thumbnail artist.image_alt '320x320' crop='smart' %}"/>
 				        </div>
 			
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %}">{{ artist.name }}</span>
@@ -54,15 +50,11 @@
 
 				<a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
 				    <div class="tile medium live tile_dis" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
-				    	<div class="live-front">
-				        	{% thumbnail artist.image '310x150' crop='center' as img %}
-	    						<img class="live-img" src="{{ img.url }}"/>
-	    					{% endthumbnail %}
+				    	<div class="live-front">				        	
+    						<img class="live-img" src="{% thumbnail artist.image '310x150' crop='smart' %}"/>
 				        </div>
 				        <div class="live-back">
-				        	{% thumbnail artist.image_alt '310x150' crop='center' as img_alt %}
-	    						<img class="live-img" src="{{ img_alt.url }}"/>
-	    					{% endthumbnail %}
+    						<img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
 				        </div>
 			
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %}">{{ artist.name }}</span>
@@ -75,15 +67,11 @@
 				
 					<a href="{% url 'artists.views.show' artist.id %}"  rel="section">
 	    				<div class="tile small tile_dis">
-	    				<div class="live-front">
-				        	{% thumbnail artist.image '150x150' crop='center' as img %}
-	    						<img class="live-img" src="{{ img.url }}"/>
-	    					{% endthumbnail %}
+	    				<div class="live-front">				        	
+    						<img class="live-img" src="{% thumbnail artist.image '150x150' crop='smart' %}"/>
 				        </div>
 				        <div class="live-back">
-				        	{% thumbnail artist.image_alt '150x150' crop='center' as img_alt %}
-	    						<img class="live-img" src="{{ img_alt.url }}"/>
-	    					{% endthumbnail %}
+    						<img class="live-img" src="{% thumbnail artist.image_alt '150x150' crop='smart' %}"/>
 				        </div>
 				        <span class="tile-cat {% cycle 'red' 'blue' 'purple' 'mango' %} ">{{ artist.name }}</span>
 	    				</div>

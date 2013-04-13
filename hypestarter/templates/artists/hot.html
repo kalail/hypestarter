@@ -37,14 +37,10 @@
             <a href="{% url 'artists.views.show' artist.id %}" class="lightbox" rel="section">
                 <div class="tile medium live tile_dis" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
                     <div class="live-front">
-                        {% thumbnail artist.image '310x150' crop='center' as img %}
-                            <img class="live-img" src="{{ img.url }}"/>
-                        {% endthumbnail %}
+                            <img class="live-img" src="{% thumbnail artist.image '310x150' crop='smart' %}"/>
                     </div>
                     <div class="live-back">
-                        {% thumbnail artist.image_alt '310x150' crop='center' as img_alt %}
-                            <img class="live-img" src="{{ img_alt.url }}"/>
-                        {% endthumbnail %}
+                            <img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
                     </div>
                     <span class="tile-date redtxt">
                         <span class="date">{{ forloop.counter }}</span>
