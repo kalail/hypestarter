@@ -39,9 +39,12 @@
                     <div class="live-front">
                             <img class="live-img" src="{% thumbnail artist.image '310x150' crop='smart' %}"/>
                     </div>
-                    <div class="live-back">
-                            <img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
-                    </div>
+                        
+                    {% if artist.image_alt %}
+                        <div class="live-back">
+                                <img class="live-img" src="{% thumbnail artist.image_alt '310x150' crop='smart' %}"/>
+                        </div>
+                    {% endif %}
                     <span class="tile-date redtxt">
                         <span class="date">{{ forloop.counter }}</span>
                     </span>
