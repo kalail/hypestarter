@@ -45,7 +45,7 @@ THUMBNAIL_CACHE_TIMEOUT = 3600 * 24 * 365 * 10 # 10 years
 THUMBNAIL_KEY_PREFIX = 'sorl-thumbnail'
 
 # Thumbnail filename prefix
-THUMBNAIL_PREFIX = 'cache/'
+THUMBNAIL_PREFIX = '%scache/' % settings.MEDIA_URL
 
 # Image format, common formats are: JPEG, PNG
 # Make sure the backend can handle the format you specify
