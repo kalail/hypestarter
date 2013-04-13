@@ -67,7 +67,7 @@ djcelery.setup_loader()
 
 
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/explore/'
 LOGIN_ERROR_URL = '/login-error/'
 
 AUTHENTICATION_BACKENDS = (
