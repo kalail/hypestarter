@@ -11,14 +11,16 @@
 {% block content %}
 
 <section class="container">
-    <div class="row">
-        <header class="highlight span12">
-            <h2>Hype up and discover new music artists with <strong>AXShype</strong></h2>               
-            <img id="feature-screenshot" src="{{ STATIC_URL }}images/highlight1.jpg">           
+    
+        <header class="highlight span12" style="margin-top: -20px">
+            <h2>Hype up and discover new music artists with <strong>HypeStarter</strong></h2>               
+            <img id="feature-screenshot" src="{{ STATIC_URL }}images/highlight1.jpg">  
+            <p> We gamify music discovery by incentivizing fans to promote artists,</p>
+            <p> enabling bands to leverage digital superfans to effectively market music. </p>         
             <p><a href="{% url 'socialauth_begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="big-btn">Sign In &nbsp; <i class="icon-twitter"></i></a></p>
             <p>You only need a <a href="http://www.twitter.com"><strong>Twitter</strong></a> account.</p>     
         </header>        
-    </div>
+    
 </section>
 
 {% endblock content %}
