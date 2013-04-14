@@ -15,6 +15,7 @@ AWS_STORAGE_BUCKET_NAME = 'hypestarter_dev'
 
 DEFAULT_FILE_STORAGE = 'helpers.storages.MediaS3Storage'
 STATICFILES_STORAGE = 'helpers.storages.StaticS3Storage'
+THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 
 # URL prefix for files.
 STATIC_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/static/'
@@ -50,7 +51,6 @@ INSTALLED_APPS = (
 	'django.contrib.staticfiles',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
-	'sorl.thumbnail',
 	
 	# Third party
 	'south',
@@ -58,11 +58,10 @@ INSTALLED_APPS = (
 	'storages',
 	'gunicorn',
 	'django_extensions',
-	'debug_toolbar',
-	'cache_panel',
 	'social_auth',
 	'crispy_forms',
 	'raven.contrib.django.raven_compat',
+	'easy_thumbnails',
 
 	# Project
 	'landing',
@@ -81,6 +80,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'debug_toolbar.middleware.DebugToolbarMiddleware',
 	'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
 )
+
+THUMBNAIL_DEBUG = True

@@ -67,7 +67,7 @@ djcelery.setup_loader()
 
 
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/explore/'
 LOGIN_ERROR_URL = '/login-error/'
 
 AUTHENTICATION_BACKENDS = (
@@ -94,6 +94,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	"django.contrib.messages.context_processors.messages",
 	'django.core.context_processors.request',
 )
+
+
+THUMBNAIL_SUBDIR = 'thumbs'
 
 # Import corresponding environment settings.
 try:
