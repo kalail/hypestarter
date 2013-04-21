@@ -5,65 +5,136 @@
 
 
 {% endblock css %}
-    <nav class="navbar">
-            <div class="header__inner fixed g-dark g-transition-transform sc-browsers-enable-gpu sc-border-box"> 
-              
+<!--
+    <header role="banner" class="header ">
+        <div class="header__inner fixed sc-border-box"/>
+            <div class="header__left left">
+                <h1 class="header__logo left">
+                    <a href="/" title="Home" class="sc-border-box">
+                        <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud" width="82" height="44" class="header__logoImage"/>
+                    </a>
+                </h1>
+                <nav class="left header__navWrapper" role="navigation">
+                    <ul class="header__navMenu header__mainMenu left">
+                        <li>
+                            <a class="header__explore-wrapper" href="/home"> Stream </a>
+                        </li>
+                        <li class="header__explore-wrapper">
+                            <a class="header__mainMenu-explore selected" href="/explore"> Explore </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div role="search" class="quicksearch headerSearch left">
+                    <form action="/search" class="" style=""> 
+                        <input class="quicksearch__input input g-all-transitions-300" 
+                            placeholder="Search" 
+                            type="search" 
+                            name="q" 
+                            autocomplete="off" 
+                            aria-label="Search" 
+                            aria-autocomplete="list" 
+                            aria-owns="searchMenuList" 
+                            x-webkit-speech="" 
+                            style=""/> 
+                        <button class="quicksearch__submit submit" type="submit"> Search </button>
+                    </form>
+                </div>
 
+            </div>
+            <div class="header__right right">
+                <ul class="header__userMenu left">
+                    <li>
+                        <a class="header__profileButton sc-pointer" role="button" title="Taylor Culbertson" aria-haspopup="true" aria-owns="dropdownMenuId">
+                            <span class="header__userMenuProfile header__userMenuIcon">
+                                <img alt="Your profile" class="userMenuProfile__image" src="https://i3.sndcdn.com/avatars-000033980601-bvf18z-t20x20.jpg?b588fe6" width="17" width="17">
+                            </span>
+                            <b class="header__userMenuShadow"/>
+                        </a>
+                    </li>
+                </ul>
+            
+            <div class="header__farRight header__container">
+                <ul class="header__navMenu header__iconMenu right withBorder">
+                    <li class="header__nowPlaying">
+                        <div class="header__bordered">
+                            <a class="nowPlaying flyingIn">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/about" class="header__about"> More </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        </div>
+
+
+
+
+    </header>    
+-->
+    <nav class="navbar">
+            <div class="header__inner fixed g-dark"> 
                 <div class="nav_container">
                     <div class="header__left left">
-                        <nav class="left">
-                            <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud"width="82" height="44"/>
-                        </nav>
-                        <ul class="nav header__navMenu header__mainMenu">
-                            <li {% if active == 'home' %} class="header__explore-wrapper" {% endif %}>
-                                <a class="g-dark a" href="{% url 'home' %}">Home</a>
+                        <ul class="header__navMenu">
+                            <h1 title="header__logo" class="header__logo left">
+                                <a href="/" title="" class="">
+                                    <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud" width="82" height="44" class="img_logo"/>
+                                </a>
+                            </h1>
+                            <li {% if active == 'home' %} class="" {% endif %}>
+                                <a class="home" href="{% url 'home' %}">Home</a>
                             </li>
-                            <ul class="nav header__navSearch header__mainSearch">
-                                <li class="header__search-wrapper">
-                                    <form action="/search" class="" style=""> 
-                                        <input class="quicksearch__input input g-all-transitions-300" 
-                                        placeholder="Search" 
-                                        type="search" 
-                                        name="q" 
-                                        autocomplete="off" 
-                                        aria-label="Search" 
-                                        aria-autocomplete="list" 
-                                        aria-owns="searchMenuList" 
-                                        x-webkit-speech="" 
-                                        style=""> 
-                                    </form>
-                                </li>
-                               
-                            </ul>
-
-                            
                         </ul>
                     </div>
-                    
-
-                    <div class="header__right right">
+                    <div class="left">
                         
-                        <ul class="nav header__navMenu header__mainMenu">
+                        <ul class="header__navSearch">
+                            <li class="header__search-wrapper">
+                                 <form action="/search"> 
+                                    <input class="" 
+                                    placeholder="Search" 
+                                    type="search" 
+                                    name="q" 
+                                    autocomplete="off" 
+                                    aria-label="Search" 
+                                    aria-autocomplete="list" 
+                                    aria-owns="searchMenuList" 
+                                    x-webkit-speech="" 
+                                    style=""> 
+                                </form>
+                            </li>
+                                
+                        </ul>
+                    </div>
+                    <div class="header__right right">
+                        <ul class="header__navMenu">
                             
-                            <li {% if active == 'explore' %} class="header__explore-wrapper" {% endif %}>
-                                <a href="{% url 'explore' %}">Explore</a>
+                            
+                            <li {% if active == 'explore' %}  {% endif %}>
+                                <a href="{% url 'explore' %}" class="explore">Explore</a>
                             </li>
-                            <li {% if active == 'hot' %} class="header__explore-wrapper" {% endif %}>
-                                <a href="{% url 'hot_artists' %}">Hot</a>
+                            <li {% if active == 'hot' %}  {% endif %}>
+                                <a href="{% url 'hot_artists' %}" class="hot">Hot</a>
                             </li>
-                            <li {% if active == 'about' %} class="header__explore-wrapper" {% endif %}>
-                                <a href="{% url 'about' %}">About</a>
+                            <li {% if active == 'about' %}  {% endif %}>
+                                <a href="{% url 'about' %}" class="about">About</a>
                             </li>
 
                     {% if user.is_authenticated %}
-                            <li><a href="{% url 'logout' %}">Sign out</a></li>
+                            <li><a href="{% url 'logout' %}" class="signin">Sign out</a></li>
                     {% else %}
-                        <li><a href="{% url 'socialauth_begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}">Sign in</a></li>
+                        <li><a href="{% url 'socialauth_begin' 'twitter' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" class="signin">Sign in</a></li>
                     {% endif %}
 
                 </ul>
             
                 </div> 
+            
             </div> 
         </div>
     </nav>
+

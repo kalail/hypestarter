@@ -1,0 +1,487 @@
+.header, .header__inner {
+width: 100%;
+min-width: 768px;
+}
+.header {
+font: 100 14px/1.5 "Interstate","Lucida Grande",Arial,sans-serif;
+height: 45px;
+background-color: #333;
+}
+
+.header__inner {
+border-top: 1px solid #2a2a2a;
+background: transparent url(https://a2.sndcdn.com/assets/images/header/header-bg-a0479b6e.png) repeat-x 0 0;
+height: 48px;
+z-index: 1000;
+
+}
+.header, .header__inner {
+width: 100%;
+min-width: 768px;
+}
+
+
+
+
+
+
+
+.g-dark {
+    color: #777;
+}
+.fixed {
+    position: fixed;
+}
+.sc-browsers-enable-gpu {
+    -webkit-transform: translate3d(0,0,0);
+}
+.sc-border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.g-dark a, .g-dark .sc-type-light {
+color: #ccc;
+text-shadow: 0 1px 0 #000;
+}
+.sc-pointer {
+cursor: pointer;
+}
+a.header__profileButton.sc-pointer
+.g-dark a, .g-dark .sc-type-light {
+color: #ccc;
+text-shadow: 0 1px 0 #000;
+}
+
+.g-dark a, .g-dark .sc-type-light {
+color: #ccc;
+text-shadow: 0 1px 0 #000;
+}
+
+
+
+
+
+.header__left {
+    margin-left: 30px;
+}
+.left {
+    float: left;
+}
+    user agent stylesheetdiv {
+    display: block;
+}
+
+h1.header__logo {
+margin-top: -1px;
+border-left: 1px solid #000;
+background: #f60;
+background: -webkit-linear-gradient(#f60,#f30);
+background: linear-gradient(#f60,#f30);
+box-shadow: -1px 0 0 rgba(255,255,255,.08);
+}
+
+
+
+
+.show .header__navWrapper, .show .headerSearch, .show .header__right {
+display: block;
+visibility: visible;
+}
+
+.header__navWrapper, .headerSearch, .header__right, .show.onboarding .header__navWrapper, .show.onboarding .headerSearch, .show.onboarding .header__right {
+display: none;
+visibility: hidden;
+}
+
+.header ul {
+margin: 0;
+list-style: none;
+}
+
+ul.header__userMenu {
+margin-right: 6px;
+}
+.header ul {
+margin: 0;
+list-style: none;
+}
+.left {
+float: left;
+}
+ul {
+list-style: disc;
+}
+ul, ol {
+padding: 0;
+margin: 0 0 18px 25px;
+}
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+
+
+.header__container, .header__navMenu {
+border-left: 1px solid rgba(0,0,0,.5);
+border-right: 1px solid rgba(255,255,255,.05);
+box-shadow: -1px 0 0 rgba(255,255,255,.05);
+-webkit-backface-visibility: hidden;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+.header__navMenu>li {
+float: left;
+position: relative;
+}
+.header__separator, .header__navMenu>li {
+border-right: 1px solid rgba(0,0,0,.5);
+}
+
+.header__navMenu>li>a {
+display: block;
+padding: 13px 16px 10px;
+text-shadow: 0 1px 0 #000;
+-webkit-transition: color .2s linear,-webkit-box-shadow .2s linear;
+-moz-transition: color .2s linear,box-shadow .2s linear;
+-o-transition: color .2s linear,box-shadow .2s linear;
+transition: color .2s linear,box-shadow .2s linear;
+}
+.header__bordered, .header__navMenu>li>a {
+border: 1px solid rgba(255,255,255,.05);
+border-width: 0 1px;
+}
+
+.header__userMenu>li>a {
+display: block;
+padding: 11px 6px 10px;
+}
+
+.header__streamBadge {
+top: 12px;
+right: 9px;
+}
+.header__notificationBadge {
+position: absolute;
+width: 9px;
+height: 9px;
+top: 11px;
+right: 1px;
+}
+
+.show .header__navWrapper, .show .headerSearch, .show .header__right {
+display: block;
+visibility: visible;
+}
+.header__navWrapper, .headerSearch, .header__right, .show.onboarding .header__navWrapper, .show.onboarding .headerSearch, .show.onboarding .header__right {
+display: none;
+visibility: hidden;
+}
+.header__right {
+margin-right: 30px;
+}
+.right {
+float: right;
+}
+
+
+
+.header__profileButton {
+background: transparent url(https://a2.sndcdn.com/assets/images/header/profile/arrow-c2d6ff85.png) 0 10px no-repeat;
+width: 36px;
+}
+
+.header__userMenuProfile {
+background: transparent;
+height: 21px;
+width: auto;
+padding-top: 3px;
+text-indent: 0;
+}
+.header__userMenuIcon {
+background: url(https://a2.sndcdn.com/assets/images/header/header-icons-6e938b6a.png) center top no-repeat;
+height: 19px;
+width: 18px;
+padding-top: 5px;
+display: inline-block;
+vertical-align: middle;
+text-indent: -9999em;
+}
+.userMenuProfile__image {
+vertical-align: top;
+}
+img {
+display: block;
+}
+img {
+border: 0;
+}
+img[Attributes Style] {
+width: 17px;
+height: 17px;
+}
+span.header__userMenuProfile.header__userMenuIcon
+.header__userMenuProfile {
+text-indent: 0;
+}
+.header__userMenuIcon {
+text-indent: -9999em;
+}
+
+.header {
+font: 100 14px/1.5 "Interstate","Lucida Grande",Arial,sans-serif;
+height: 45px;
+background-color: #333;
+}
+
+.headerSearch .quicksearch__form {
+position: absolute;
+padding: 9px 7px 8px 15px;
+width: 255px;
+z-index: 1;
+-webkit-transition: width .28s ease;
+-moz-transition: width .28s ease;
+-o-transition: width .28s ease;
+transition: width .28s ease;
+}
+
+.quicksearch__form {
+width: 255px;
+position: relative;
+}
+
+form {
+display: block;
+margin-top: 0em;
+}
+
+.g-dark textarea, .g-dark select, .g-dark input[type="text"], .g-dark input[type="password"], .g-dark input[type="search"] {
+color: #666;
+outline: 0;
+border: 0;
+border-radius: 5px;
+padding: 5px 7px;
+font-size: 14px;
+font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+font-weight: 100;
+background: rgba(255,255,255,.9);
+text-shadow: none;
+box-shadow: 0 1px 0 rgba(0,0,0,1),inset 0 1px 0 rgba(34,25,25,.3);
+}
+
+.headerSearch .quicksearch__input {
+height: 28px;
+}
+
+input.quicksearch__input {
+width: 100%;
+position: relative;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+font-weight: 100;
+border: 1px solid #ccc;
+padding: 9px 40px 8px 9px;
+font-size: 18px;
+box-shadow: inset 1px 2px 4px rgba(100,100,100,.1);
+}
+
+input[type="search"] {
+-webkit-appearance: none;
+}
+textarea, select, input[type="text"], input[type="email"], input[type="date"], input[type="password"], input[type="search"] {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+input[type="search"] {
+-webkit-appearance: textfield;
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box;
+box-sizing: content-box;
+}
+
+.headerSearch .quicksearch__submit {
+top: 15px;
+}
+
+div {
+display: block;
+}
+
+.quicksearch__submit {
+border: 0;
+padding: 0;
+background: url(https://a2.sndcdn.com/assets/images/header/header-icons-6e938b6a.png) 50% -359px no-repeat;
+text-indent: 22px;
+overflow: hidden;
+width: 22px;
+height: 19px;
+position: absolute;
+right: 12px;
+top: 14px;
+}
+
+textarea, select, button, input {
+font-family: inherit;
+color: #333;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+-webkit-appearance: button;
+cursor: pointer;
+}
+
+button, input {
+line-height: normal;
+}
+button, input, select, textarea {
+font-family: inherit;
+font-size: 100%;
+margin: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+-webkit-box-align: center;
+text-align: center;
+cursor: default;
+color: buttontext;
+padding: 2px 6px 3px;
+border: 2px outset buttonface;
+border-image: initial;
+background-color: buttonface;
+box-sizing: border-box;
+}
+user agent stylesheetinput, textarea, keygen, select, button, isindex {
+margin: 0em;
+font: -webkit-small-control;
+color: initial;
+letter-spacing: normal;
+word-spacing: normal;
+text-transform: none;
+text-indent: 0px;
+text-shadow: none;
+display: inline-block;
+text-align: start;
+}
+
+input, textarea, keygen, select, button, isindex, meter, progress {
+-webkit-writing-mode: horizontal-tb;
+}
+user agent stylesheetbutton {
+-webkit-appearance: button;
+}
+
+
+
+
+
+
+
+
+
+/* RIGHT */
+
+
+
+
+
+.header__right {
+margin-right: 30px;
+}
+.right {
+float: right;
+}
+
+
+
+
+
+
+.header__profileButton {
+background: transparent url(https://a2.sndcdn.com/assets/images/header/profile/arrow-c2d6ff85.png) 0 10px no-repeat;
+width: 36px;
+}
+
+
+a, a:visited {
+color: #06c;
+text-decoration: none;
+}
+
+
+.header__userMenuProfile {
+background: transparent;
+height: 21px;
+width: auto;
+padding-top: 3px;
+text-indent: 0;
+}
+.header__userMenuIcon {
+background: url(https://a2.sndcdn.com/assets/images/header/header-icons-6e938b6a.png) center top no-repeat;
+height: 19px;
+width: 18px;
+padding-top: 5px;
+display: inline-block;
+vertical-align: middle;
+text-indent: -9999em;
+}
+
+
+.userMenuProfile__image {
+vertical-align: top;
+}
+img {
+display: block;
+}
+img {
+border: 0;
+}
+img[Attributes Style] {
+width: 17px;
+}
+span.header__userMenuProfile.header__userMenuIcon
+.header__userMenuProfile {
+text-indent: 0;
+}
+.header__userMenuIcon {
+text-indent: -9999em;
+}
+
+.header__farRight {
+border-right: 0;
+float: left;
+width: 330px;
+}
+.header__container, .header__navMenu {
+border-left: 1px solid rgba(0,0,0,.5);
+border-right: 1px solid rgba(255,255,255,.05);
+box-shadow: -1px 0 0 rgba(255,255,255,.05);
+-webkit-backface-visibility: hidden;
+}
+.header__soundInput, .header__loginMenu {
+border-left: 1px solid rgba(255,255,255,.05);
+}
+
+
+
+.header__iconMenu.withBorder {
+border-left: 1px solid rgba(0,0,0,.5);
+-webkit-box-shadow: -1px 0 0 rgba(255,255,255,.05);
+box-shadow: -1px 0 0 rgba(255,255,255,.05);
+}
+
+.header__iconMenu {
+border-left: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
