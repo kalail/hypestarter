@@ -5,76 +5,7 @@
 
 
 {% endblock css %}
-<!--
-    <header role="banner" class="header ">
-        <div class="header__inner fixed sc-border-box"/>
-            <div class="header__left left">
-                <h1 class="header__logo left">
-                    <a href="/" title="Home" class="sc-border-box">
-                        <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud" width="82" height="44" class="header__logoImage"/>
-                    </a>
-                </h1>
-                <nav class="left header__navWrapper" role="navigation">
-                    <ul class="header__navMenu header__mainMenu left">
-                        <li>
-                            <a class="header__explore-wrapper" href="/home"> Stream </a>
-                        </li>
-                        <li class="header__explore-wrapper">
-                            <a class="header__mainMenu-explore selected" href="/explore"> Explore </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div role="search" class="quicksearch headerSearch left">
-                    <form action="/search" class="" style=""> 
-                        <input class="quicksearch__input input g-all-transitions-300" 
-                            placeholder="Search" 
-                            type="search" 
-                            name="q" 
-                            autocomplete="off" 
-                            aria-label="Search" 
-                            aria-autocomplete="list" 
-                            aria-owns="searchMenuList" 
-                            x-webkit-speech="" 
-                            style=""/> 
-                        <button class="quicksearch__submit submit" type="submit"> Search </button>
-                    </form>
-                </div>
 
-            </div>
-            <div class="header__right right">
-                <ul class="header__userMenu left">
-                    <li>
-                        <a class="header__profileButton sc-pointer" role="button" title="Taylor Culbertson" aria-haspopup="true" aria-owns="dropdownMenuId">
-                            <span class="header__userMenuProfile header__userMenuIcon">
-                                <img alt="Your profile" class="userMenuProfile__image" src="https://i3.sndcdn.com/avatars-000033980601-bvf18z-t20x20.jpg?b588fe6" width="17" width="17">
-                            </span>
-                            <b class="header__userMenuShadow"/>
-                        </a>
-                    </li>
-                </ul>
-            
-            <div class="header__farRight header__container">
-                <ul class="header__navMenu header__iconMenu right withBorder">
-                    <li class="header__nowPlaying">
-                        <div class="header__bordered">
-                            <a class="nowPlaying flyingIn">
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/about" class="header__about"> More </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        </div>
-
-
-
-
-    </header>    
--->
     <nav class="navbar">
             <div class="header__inner fixed g-dark"> 
                 <div class="nav_container">
@@ -85,11 +16,34 @@
                                     <img src="{{ STATIC_URL }}images/nav/hypestarter_icon.png" alt="SoundCloud" width="82" height="44" class="img_logo"/>
                                 </a>
                             </h1>
-                            <li {% if active == 'home' %} class="" {% endif %}>
-                                <a class="home" href="{% url 'home' %}">Home</a>
+                            <li {% if active == 'explore' %}  {% endif %}>
+                                <a href="{% url 'explore' %}" class="music">
+                                    <img alt="Your profile" class="" src="{{ STATIC_URL }}images/sound.png" height="" width=""/>
+                                </a>
                             </li>
+                            <li class="header__volume sc-selection-disabled">
+                                <div class="volume" data-level="10">
+                                    <div class="volume__wrapper">
+                                        <button class="volume__button volume__togglemute sc-ir"> Toggle Mute </button>
+                                        <div role="slider" tabindex="0" class="volume__slider g-slider" aria-valuenow="1">
+                                            <div class="progress"></div>
+                                            <span class="volume__handle g-slider-handle" style="left: 48px;"> </span>
+                                        </div>
+                                        <input type="hidden" data-orig-type="range" class="volume__range" min="0" max="1" step="0.1" value="1">
+                                        <button class="volume__button volume__indicator sc-ir"></button>
+                                    </div>
+                                </div>
+                            </li>
+                      <!--      <li {% if active == 'home' %} class="" {% endif %}>
+                                <a class="home" href="{% url 'home' %}">Home</a>
+                            </li> -->
                         </ul>
                     </div>
+
+
+
+
+
                     <div class="left">
                         
                         <ul class="header__navSearch">
@@ -120,6 +74,7 @@
 
                             </li>
                             
+                            
                             <li {% if active == 'explore' %}  {% endif %}>
                                 <a href="{% url 'explore' %}" class="explore">Explore</a>
                             </li>
@@ -139,6 +94,9 @@
                 </ul>
             
                 </div> 
+            
+                
+
             
             </div> 
         </div>
