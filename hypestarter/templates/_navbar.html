@@ -112,7 +112,13 @@
                     </div>
                     <div class="header__right right">
                         <ul class="header__navMenu">
-                            
+                            <li>
+                                <a class="header__profileButton" role="button" aria-haspopup="true">
+                                    <span class="header__userMenuProfile header__userMenuIcon" aria-owns="dropdownMenuId">
+                                    <img alt="Your profile" class="userMenuProfile__image" src="https://i3.sndcdn.com/avatars-000033980601-bvf18z-t20x20.jpg?e48997d" height="17" width="17"/>
+                                </a>
+
+                            </li>
                             
                             <li {% if active == 'explore' %}  {% endif %}>
                                 <a href="{% url 'explore' %}" class="explore">Explore</a>

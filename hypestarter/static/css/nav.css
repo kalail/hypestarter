@@ -137,42 +137,14 @@ Explore
 }
 
 
-
-
-
 /*----------------------------------------------------------------------------
-Sign In
+Profile Button
 ----------------------------------------------------------------------------*/
 
-
-
-
-
-
-
-
-
-.header ul{
-    margin: 0;
-    list-style: none;
-}
-
-.navbar .nav li{
-margin-left: 0px;
-text-shadow: 0 0px 0 #ffffff;
-
-}
-
-
-
-
-
-
-
-
 .header__profileButton {
-background: transparent url(https://a2.sndcdn.com/assets/images/header/profile/arrow-c2d6ff85.png) 0 10px no-repeat;
-width: 36px;
+    padding: 12px 6px 10px;
+    background: transparent url(https://a2.sndcdn.com/assets/images/header/profile/arrow-c2d6ff85.png) 0 10px no-repeat;
+    width: 36px;
 }
 
 .header__userMenuProfile {
